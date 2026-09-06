@@ -32,9 +32,10 @@
       "camera": {
         "type": "perspective",
         "xr": {
-          "desktop": "3D",
-          "xrCameraType": "3dOnly",
-          "headset": "disabled"
+          "desktop": "disabled",
+          "xrCameraType": "world",
+          "headset": "disabled",
+          "phone": "AR"
         }
       },
       "components": {},
@@ -93,24 +94,24 @@
     "4bd19726-543e-4548-ace1-2de966335a99": {
       "id": "4bd19726-543e-4548-ace1-2de966335a99",
       "position": [
-        -0.06378347350998115,
-        0,
-        0.18773120722569936
+        -0.0017841559903325477,
+        -0.010491376756079918,
+        2.329553606923422e-18
       ],
       "rotation": [
-        0,
-        0,
-        0,
-        1
+        0.6214175397860574,
+        -0.33740219508213615,
+        -0.3374021950821361,
+        0.6214175397860573
       ],
       "scale": [
-        1,
-        1,
-        1
+        1.0000000000000016,
+        1.0000000000000002,
+        1.0000000000000016
       ],
       "geometry": null,
       "material": null,
-      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "parentId": "592d070c-2007-4833-b8d8-602852309535",
       "components": {},
       "gltfModel": {
         "src": {
@@ -121,7 +122,218 @@
         "loop": true
       },
       "name": "PArrot.glb",
-      "order": 2.442249872763749
+      "order": 4.066213498468755
+    },
+    "592d070c-2007-4833-b8d8-602852309535": {
+      "id": "592d070c-2007-4833-b8d8-602852309535",
+      "position": [
+        0.05407913204142423,
+        0,
+        1.9151978333360304
+      ],
+      "rotation": [
+        -0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {},
+      "name": "G_Target",
+      "imageTarget": {
+        "name": "G_Target"
+      },
+      "order": 3.5827135172818663
+    },
+    "762a6624-7b99-42c2-80f2-d7df0e5be192": {
+      "id": "762a6624-7b99-42c2-80f2-d7df0e5be192",
+      "position": [
+        -0.7703954343546728,
+        0,
+        1.8493804669766
+      ],
+      "rotation": [
+        -0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {},
+      "name": "MA_Target",
+      "imageTarget": {
+        "name": "MA_Target"
+      },
+      "order": 4.87155176928648
+    },
+    "a711a664-2208-436b-add2-7e7ee9aefd1e": {
+      "id": "a711a664-2208-436b-add2-7e7ee9aefd1e",
+      "position": [
+        -0.007249717135713762,
+        -0.11661919358139805,
+        2.5894662765457277e-17
+      ],
+      "rotation": [
+        0.5572077475232345,
+        -0.43533840411808755,
+        -0.43533840411808744,
+        0.5572077475232347
+      ],
+      "scale": [
+        0.3000000000000004,
+        0.30000000000000016,
+        0.3000000000000004
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "762a6624-7b99-42c2-80f2-d7df0e5be192",
+      "components": {},
+      "gltfModel": {
+        "src": {
+          "type": "asset",
+          "asset": "assets/Mono.glb"
+        },
+        "animationClip": "B1Idle",
+        "loop": true
+      },
+      "name": "Mono.glb",
+      "order": 6.138553447786061
+    },
+    "ce48964e-3694-4658-a39b-0f7204178879": {
+      "id": "ce48964e-3694-4658-a39b-0f7204178879",
+      "position": [
+        0.8952028781046228,
+        0,
+        1.9470411178059144
+      ],
+      "rotation": [
+        -0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {},
+      "name": "O_Target",
+      "imageTarget": {
+        "name": "O_Target"
+      },
+      "order": 6.242932693705105
+    },
+    "8fea6a02-b504-41e8-899e-b71e737d3179": {
+      "id": "8fea6a02-b504-41e8-899e-b71e737d3179",
+      "position": [
+        -0.0312071790661832,
+        -0.08462445391397955,
+        1.8790403436326108e-17
+      ],
+      "rotation": [
+        0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "scale": [
+        0.03,
+        0.03,
+        0.03
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "f0f4410b-d8ea-4314-8a1e-fd324246df5f",
+      "components": {},
+      "gltfModel": {
+        "src": {
+          "type": "asset",
+          "asset": "assets/Oso.glb"
+        },
+        "animationClip": "idle",
+        "loop": true
+      },
+      "name": "Oso.glb",
+      "order": 7.517640167488926
+    },
+    "d5b4325d-8224-403d-b684-6cae7c39fd13": {
+      "id": "d5b4325d-8224-403d-b684-6cae7c39fd13",
+      "position": [
+        0.0002630143519444239,
+        0.03885125011920909,
+        -8.626710483563358e-18
+      ],
+      "rotation": [
+        -0.43045933457687907,
+        0.5609855267969311,
+        0.5609855267969313,
+        -0.43045933457687907
+      ],
+      "scale": [
+        0.020000000000000025,
+        0.02,
+        0.020000000000000025
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "ce48964e-3694-4658-a39b-0f7204178879",
+      "components": {},
+      "gltfModel": {
+        "src": {
+          "type": "asset",
+          "asset": "assets/Ocelote.glb"
+        },
+        "animationClip": "Take 001",
+        "loop": true
+      },
+      "name": "Ocelote.glb",
+      "order": 8.59706440691958
+    },
+    "f0f4410b-d8ea-4314-8a1e-fd324246df5f": {
+      "id": "f0f4410b-d8ea-4314-8a1e-fd324246df5f",
+      "position": [
+        1.7951458231327482,
+        0,
+        1.9719148502948203
+      ],
+      "rotation": [
+        -0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {},
+      "name": "OA_Target",
+      "imageTarget": {
+        "name": "OA_Target"
+      },
+      "order": 9.382973473778087
     }
   },
   "spaces": {
