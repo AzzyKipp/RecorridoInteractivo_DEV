@@ -334,6 +334,166 @@
         "name": "OA_Target"
       },
       "order": 9.382973473778087
+    },
+    "542eeef6-6c22-4e24-824c-9e66f47c51f4": {
+      "id": "542eeef6-6c22-4e24-824c-9e66f47c51f4",
+      "position": [
+        0.3143812271053061,
+        0,
+        5.577102963245
+      ],
+      "rotation": [
+        -0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {},
+      "name": "Mapa_Target",
+      "imageTarget": {
+        "name": "Mapa_Target"
+      },
+      "order": 10.707918890818885
+    },
+    "fc165008-f764-47e8-9ac4-5240e74e002c": {
+      "id": "fc165008-f764-47e8-9ac4-5240e74e002c",
+      "position": [
+        0.26512759558497906,
+        -0.07455718080141782,
+        0.02701348420781734
+      ],
+      "rotation": [
+        0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "scale": [
+        0.7000000000000001,
+        0.7000000000000001,
+        0.7000000000000001
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "542eeef6-6c22-4e24-824c-9e66f47c51f4",
+      "components": {},
+      "gltfModel": {
+        "src": {
+          "type": "asset",
+          "asset": "assets/LocationPIN.glb"
+        },
+        "animationClip": "",
+        "loop": true
+      },
+      "name": "LocationPIN.glb",
+      "order": 12.7047720881433
+    },
+    "30e5f7bd-5ddd-48ee-abb6-399694491990": {
+      "id": "30e5f7bd-5ddd-48ee-abb6-399694491990",
+      "position": [
+        0.13368264984596917,
+        -0.030261917711900566,
+        0.02701348420781733
+      ],
+      "rotation": [
+        0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "scale": [
+        0.7000000000000001,
+        0.7000000000000001,
+        0.7000000000000001
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "542eeef6-6c22-4e24-824c-9e66f47c51f4",
+      "components": {},
+      "gltfModel": {
+        "src": {
+          "type": "asset",
+          "asset": "assets/LocationPIN.glb"
+        },
+        "animationClip": "",
+        "loop": true
+      },
+      "name": "LocationPIN.glb (1)",
+      "order": 14.481273637298173
+    },
+    "c10843d5-5fc9-4762-b590-665b401b9a28": {
+      "id": "c10843d5-5fc9-4762-b590-665b401b9a28",
+      "position": [
+        -0.28676266822248636,
+        -0.07096333114936026,
+        0.027013484207817337
+      ],
+      "rotation": [
+        0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "scale": [
+        0.7000000000000001,
+        0.7000000000000001,
+        0.7000000000000001
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "542eeef6-6c22-4e24-824c-9e66f47c51f4",
+      "components": {},
+      "gltfModel": {
+        "src": {
+          "type": "asset",
+          "asset": "assets/LocationPIN.glb"
+        },
+        "animationClip": "",
+        "loop": true
+      },
+      "name": "LocationPIN.glb (2)",
+      "order": 16.097853416695635
+    },
+    "f19f4baa-bddd-4e34-9102-cf6db9a4f29f": {
+      "id": "f19f4baa-bddd-4e34-9102-cf6db9a4f29f",
+      "position": [
+        -0.3765052538164898,
+        -0.09259448017668337,
+        0.027013484207817334
+      ],
+      "rotation": [
+        0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "scale": [
+        0.7000000000000001,
+        0.7000000000000001,
+        0.7000000000000001
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "542eeef6-6c22-4e24-824c-9e66f47c51f4",
+      "components": {},
+      "gltfModel": {
+        "src": {
+          "type": "asset",
+          "asset": "assets/LocationPIN.glb"
+        },
+        "animationClip": "",
+        "loop": true
+      },
+      "name": "LocationPIN.glb (3)",
+      "order": 17.456679209205372
     }
   },
   "spaces": {

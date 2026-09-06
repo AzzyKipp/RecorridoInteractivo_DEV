@@ -1,10 +1,10 @@
 {
   "type": "PLANAR",
   "properties": {
-    "top": 0,
-    "left": 137,
-    "width": 2000,
-    "height": 2667,
+    "top": 152,
+    "left": 416,
+    "width": 1751,
+    "height": 2335,
     "isRotated": true,
     "originalWidth": 2275,
     "originalHeight": 2667
@@ -19,5 +19,5 @@
     "luminanceImage": "Mapa_Target_luminance.jpg"
   },
   "created": 1788722804577,
-  "updated": 1788722804577
+  "updated": 1788728997278
 }
