@@ -1,0 +1,23 @@
+{
+  "type": "PLANAR",
+  "properties": {
+    "top": 3,
+    "left": 0,
+    "width": 1127,
+    "height": 1502,
+    "isRotated": false,
+    "originalWidth": 1127,
+    "originalHeight": 1509
+  },
+  "imagePath": "image-targets/Aullador_Target_luminance.jpg",
+  "metadata": null,
+  "name": "Aullador_Target",
+  "resources": {
+    "originalImage": "Aullador_Target_original.jpg",
+    "croppedImage": "Aullador_Target_cropped.jpg",
+    "thumbnailImage": "Aullador_Target_thumbnail.jpg",
+    "luminanceImage": "Aullador_Target_luminance.jpg"
+  },
+  "created": 1788722809581,
+  "updated": 1788722809581
+}

@@ -1,0 +1,23 @@
+{
+  "type": "PLANAR",
+  "properties": {
+    "top": 0,
+    "left": 65,
+    "width": 611,
+    "height": 815,
+    "isRotated": true,
+    "originalWidth": 742,
+    "originalHeight": 815
+  },
+  "imagePath": "image-targets/Anteojos_Target_luminance.jpg",
+  "metadata": null,
+  "name": "Anteojos_Target",
+  "resources": {
+    "originalImage": "Anteojos_Target_original.jpg",
+    "croppedImage": "Anteojos_Target_cropped.jpg",
+    "thumbnailImage": "Anteojos_Target_thumbnail.jpg",
+    "luminanceImage": "Anteojos_Target_luminance.jpg"
+  },
+  "created": 1788722813084,
+  "updated": 1788722813084
+}

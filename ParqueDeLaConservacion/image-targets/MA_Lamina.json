@@ -1,0 +1,23 @@
+{
+  "type": "PLANAR",
+  "properties": {
+    "top": 18,
+    "left": 0,
+    "width": 480,
+    "height": 640,
+    "isRotated": false,
+    "originalWidth": 480,
+    "originalHeight": 677
+  },
+  "imagePath": "image-targets/MA_Lamina_luminance.png",
+  "metadata": null,
+  "name": "MA_Lamina",
+  "resources": {
+    "originalImage": "MA_Lamina_original.png",
+    "croppedImage": "MA_Lamina_cropped.png",
+    "thumbnailImage": "MA_Lamina_thumbnail.png",
+    "luminanceImage": "MA_Lamina_luminance.png"
+  },
+  "created": 1788722386041,
+  "updated": 1788722386041
+}

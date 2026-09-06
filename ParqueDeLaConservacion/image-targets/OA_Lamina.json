@@ -1,0 +1,23 @@
+{
+  "type": "PLANAR",
+  "properties": {
+    "top": 18,
+    "left": 0,
+    "width": 480,
+    "height": 640,
+    "isRotated": false,
+    "originalWidth": 480,
+    "originalHeight": 677
+  },
+  "imagePath": "image-targets/OA_Lamina_luminance.png",
+  "metadata": null,
+  "name": "OA_Lamina",
+  "resources": {
+    "originalImage": "OA_Lamina_original.png",
+    "croppedImage": "OA_Lamina_cropped.png",
+    "thumbnailImage": "OA_Lamina_thumbnail.png",
+    "luminanceImage": "OA_Lamina_luminance.png"
+  },
+  "created": 1788722390264,
+  "updated": 1788722390264
+}

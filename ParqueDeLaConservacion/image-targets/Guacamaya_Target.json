@@ -1,0 +1,23 @@
+{
+  "type": "PLANAR",
+  "properties": {
+    "top": 155,
+    "left": 0,
+    "width": 694,
+    "height": 925,
+    "isRotated": true,
+    "originalWidth": 694,
+    "originalHeight": 1237
+  },
+  "imagePath": "image-targets/Guacamaya_Target_luminance.jpg",
+  "metadata": null,
+  "name": "Guacamaya_Target",
+  "resources": {
+    "originalImage": "Guacamaya_Target_original.jpg",
+    "croppedImage": "Guacamaya_Target_cropped.jpg",
+    "thumbnailImage": "Guacamaya_Target_thumbnail.jpg",
+    "luminanceImage": "Guacamaya_Target_luminance.jpg"
+  },
+  "created": 1788722788080,
+  "updated": 1788722788080
+}

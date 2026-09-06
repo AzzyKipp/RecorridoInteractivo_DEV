@@ -1,0 +1,23 @@
+{
+  "type": "PLANAR",
+  "properties": {
+    "top": 18,
+    "left": 0,
+    "width": 480,
+    "height": 640,
+    "isRotated": false,
+    "originalWidth": 480,
+    "originalHeight": 676
+  },
+  "imagePath": "image-targets/G_Lamina_luminance.png",
+  "metadata": null,
+  "name": "G_Lamina",
+  "resources": {
+    "originalImage": "G_Lamina_original.png",
+    "croppedImage": "G_Lamina_cropped.png",
+    "thumbnailImage": "G_Lamina_thumbnail.png",
+    "luminanceImage": "G_Lamina_luminance.png"
+  },
+  "created": 1788722380782,
+  "updated": 1788722380782
+}
