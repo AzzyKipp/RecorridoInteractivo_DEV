@@ -1,7 +1,7 @@
 {
   "type": "PLANAR",
   "properties": {
-    "top": 155,
+    "top": 59,
     "left": 0,
     "width": 694,
     "height": 925,
@@ -19,5 +19,5 @@
     "luminanceImage": "Guacamaya_Target_luminance.jpg"
   },
   "created": 1788722788080,
-  "updated": 1788722788080
+  "updated": 1788742721167
 }

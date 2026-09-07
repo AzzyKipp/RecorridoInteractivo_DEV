@@ -2,7 +2,7 @@
   "type": "PLANAR",
   "properties": {
     "top": 0,
-    "left": 65,
+    "left": 60,
     "width": 611,
     "height": 815,
     "isRotated": true,
@@ -19,5 +19,5 @@
     "luminanceImage": "Anteojos_Target_luminance.jpg"
   },
   "created": 1788722813084,
-  "updated": 1788722813084
+  "updated": 1788742676213
 }
