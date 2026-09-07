@@ -15,6 +15,7 @@ const onxrloaded = () => {
       require('../image-targets/OA_Lamina.json'),
       require('../image-targets/MA_Lamina.json'),
       require('../image-targets/Ecosistema.json'),
+      require('../image-targets/Redes.json'),
 
     ],
   })
