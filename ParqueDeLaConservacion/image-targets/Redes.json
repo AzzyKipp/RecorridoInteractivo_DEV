@@ -1,0 +1,23 @@
+{
+  "type": "PLANAR",
+  "properties": {
+    "top": 0,
+    "left": 9,
+    "width": 594,
+    "height": 792,
+    "isRotated": false,
+    "originalWidth": 612,
+    "originalHeight": 792
+  },
+  "imagePath": "image-targets/Redes_luminance.png",
+  "metadata": null,
+  "name": "Redes",
+  "resources": {
+    "originalImage": "Redes_original.png",
+    "croppedImage": "Redes_cropped.png",
+    "thumbnailImage": "Redes_thumbnail.png",
+    "luminanceImage": "Redes_luminance.png"
+  },
+  "created": 1788748997194,
+  "updated": 1788749006894
+}

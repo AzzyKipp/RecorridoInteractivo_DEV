@@ -600,15 +600,15 @@
         0.14717946871686238
       ],
       "rotation": [
-        0.6644630243886746,
-        -0.24184476264797555,
-        -0.24184476264797553,
-        0.6644630243886747
+        0.45817178677771725,
+        -0.5495076225726574,
+        -0.5568881826978647,
+        0.42189517478507943
       ],
       "scale": [
-        0.0263157894736842,
-        0.026315789473684188,
-        0.0263157894736842
+        0.05,
+        0.05,
+        0.05
       ],
       "geometry": null,
       "material": null,
@@ -619,7 +619,7 @@
           "type": "asset",
           "asset": "assets/Mono.glb"
         },
-        "animationClip": "Idle2",
+        "animationClip": "Attack1",
         "loop": true
       },
       "name": "Mono.glb (1)",
@@ -672,9 +672,9 @@
         -0.2988362387301196
       ],
       "scale": [
-        0.002631578947368428,
-        0.002631578947368419,
-        0.002631578947368428
+        0.004,
+        0.004,
+        0.004
       ],
       "geometry": null,
       "material": null,
@@ -690,6 +690,116 @@
       },
       "name": "Ocelote.glb (1)",
       "order": 24.054157824666884
+    },
+    "71eac995-3f1d-4875-b9b5-6a0c149c8eda": {
+      "id": "71eac995-3f1d-4875-b9b5-6a0c149c8eda",
+      "position": [
+        -0.29024118818223854,
+        -0.33412714589798975,
+        2.003390939222511e-17
+      ],
+      "rotation": [
+        0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "scale": [
+        0.12195121951219524,
+        0.12195121951219524,
+        0.12195121951219524
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "2c20b57d-ce06-4515-99ef-0759fd39a67d",
+      "components": {
+        "978bad5b-3c9b-401d-8ac3-af8e942903e2": {
+          "id": "978bad5b-3c9b-401d-8ac3-af8e942903e2",
+          "name": "ExternalURLController",
+          "parameters": {
+            "url": "https://www.youtube.com/channel/UCQ4ECxkqBO7cAcG2W-U2DLg?view_as=subscriber"
+          }
+        }
+      },
+      "gltfModel": {
+        "src": {
+          "type": "asset",
+          "asset": "assets/YouTubeLogo.glb"
+        },
+        "animationClip": "",
+        "loop": true
+      },
+      "name": "YouTubeLogo.glb",
+      "order": 19.338726849314245
+    },
+    "65eae35d-a3e7-44ee-bff4-e96649968f43": {
+      "id": "65eae35d-a3e7-44ee-bff4-e96649968f43",
+      "position": [
+        -0.2671719028658409,
+        -0.19002549663810742,
+        4.2194136326691426e-17
+      ],
+      "rotation": [
+        0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "scale": [
+        0.12195121951219524,
+        0.12195121951219524,
+        0.12195121951219524
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "2c20b57d-ce06-4515-99ef-0759fd39a67d",
+      "components": {
+        "87b7b2af-0218-4840-af6e-801984e4492a": {
+          "id": "87b7b2af-0218-4840-af6e-801984e4492a",
+          "name": "ExternalURLController",
+          "parameters": {
+            "url": "https://www.instagram.com/parquedelaconservacion/"
+          }
+        }
+      },
+      "gltfModel": {
+        "src": {
+          "type": "asset",
+          "asset": "assets/IGLogo.glb"
+        },
+        "animationClip": "",
+        "loop": true
+      },
+      "name": "IGLogo.glb",
+      "order": 21.169909267854944
+    },
+    "2c20b57d-ce06-4515-99ef-0759fd39a67d": {
+      "id": "2c20b57d-ce06-4515-99ef-0759fd39a67d",
+      "position": [
+        -4.900027334452043,
+        0,
+        7.576836566415831
+      ],
+      "rotation": [
+        -0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "scale": [
+        8.199999999999992,
+        8.199999999999992,
+        8.199999999999992
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {},
+      "name": "Redes",
+      "imageTarget": {
+        "name": "Redes"
+      },
+      "order": 22.92359875954829
     }
   },
   "spaces": {
