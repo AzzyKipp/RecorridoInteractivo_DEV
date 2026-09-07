@@ -1,0 +1,23 @@
+{
+  "type": "PLANAR",
+  "properties": {
+    "top": 0,
+    "left": 96,
+    "width": 599,
+    "height": 799,
+    "isRotated": true,
+    "originalWidth": 792,
+    "originalHeight": 799
+  },
+  "imagePath": "image-targets/Ecosistema_luminance.png",
+  "metadata": null,
+  "name": "Ecosistema",
+  "resources": {
+    "originalImage": "Ecosistema_original.png",
+    "croppedImage": "Ecosistema_cropped.png",
+    "thumbnailImage": "Ecosistema_thumbnail.png",
+    "luminanceImage": "Ecosistema_luminance.png"
+  },
+  "created": 1788744741508,
+  "updated": 1788744806332
+}

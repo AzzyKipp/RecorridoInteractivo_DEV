@@ -497,6 +497,199 @@
         "name": "G_Lamina"
       },
       "order": 15.64292486921415
+    },
+    "d35cff39-edd6-4547-90f2-a15ee4c1a085": {
+      "id": "d35cff39-edd6-4547-90f2-a15ee4c1a085",
+      "position": [
+        2.9341586943537363,
+        0,
+        6.49776432685306
+      ],
+      "rotation": [
+        -0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "scale": [
+        3.8000000000000034,
+        3.8000000000000034,
+        3.8000000000000034
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {},
+      "name": "Ecosistema",
+      "imageTarget": {
+        "name": "Ecosistema"
+      },
+      "order": 17.433486818170376
+    },
+    "522bf927-076d-433a-b2e4-0ce83a8be7d6": {
+      "id": "522bf927-076d-433a-b2e4-0ce83a8be7d6",
+      "position": [
+        0.013743233816970069,
+        -0.0069306198090532956,
+        1.538906737386835e-18
+      ],
+      "rotation": [
+        0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "scale": [
+        0.023684210526315766,
+        0.023684210526315766,
+        0.023684210526315766
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "d35cff39-edd6-4547-90f2-a15ee4c1a085",
+      "components": {},
+      "gltfModel": {
+        "src": {
+          "type": "asset",
+          "asset": "assets/Ecosistema.glb"
+        },
+        "animationClip": "",
+        "loop": true
+      },
+      "name": "Ecosistema.glb",
+      "order": 19.033689463946544
+    },
+    "3cf6c9f2-0dd8-4ab7-8aa5-1b4c2c2a9030": {
+      "id": "3cf6c9f2-0dd8-4ab7-8aa5-1b4c2c2a9030",
+      "position": [
+        -0.10541835285007073,
+        0.2617248193900772,
+        0.01695494523450506
+      ],
+      "rotation": [
+        0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "scale": [
+        0.26315789473684187,
+        0.26315789473684187,
+        0.26315789473684187
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "d35cff39-edd6-4547-90f2-a15ee4c1a085",
+      "components": {},
+      "gltfModel": {
+        "src": {
+          "type": "asset",
+          "asset": "assets/Guacamaya.glb"
+        },
+        "animationClip": "ParrotALL_CircleFly",
+        "loop": true
+      },
+      "name": "Guacamaya.glb",
+      "order": 20.77179882877948
+    },
+    "96b81f22-da27-4f6e-b521-49f2f871013d": {
+      "id": "96b81f22-da27-4f6e-b521-49f2f871013d",
+      "position": [
+        0.1609595878724186,
+        0.08885482016629243,
+        0.14717946871686238
+      ],
+      "rotation": [
+        0.6644630243886746,
+        -0.24184476264797555,
+        -0.24184476264797553,
+        0.6644630243886747
+      ],
+      "scale": [
+        0.0263157894736842,
+        0.026315789473684188,
+        0.0263157894736842
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "d35cff39-edd6-4547-90f2-a15ee4c1a085",
+      "components": {},
+      "gltfModel": {
+        "src": {
+          "type": "asset",
+          "asset": "assets/Mono.glb"
+        },
+        "animationClip": "Idle2",
+        "loop": true
+      },
+      "name": "Mono.glb (1)",
+      "order": 17.31706379483032
+    },
+    "6abb15d4-fe37-4956-9bd5-a6a3f33e3ea9": {
+      "id": "6abb15d4-fe37-4956-9bd5-a6a3f33e3ea9",
+      "position": [
+        -0.051194904010102626,
+        -0.09243492000047215,
+        0.02182136470935292
+      ],
+      "rotation": [
+        0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "scale": [
+        0.005263157894736838,
+        0.005263157894736838,
+        0.005263157894736838
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "d35cff39-edd6-4547-90f2-a15ee4c1a085",
+      "components": {},
+      "gltfModel": {
+        "src": {
+          "type": "asset",
+          "asset": "assets/Oso.glb"
+        },
+        "animationClip": "idle",
+        "loop": true
+      },
+      "name": "Oso.glb (1)",
+      "order": 22.295909789234745
+    },
+    "eb7ff1b7-7dc7-43eb-8ff3-a0df778f4a0c": {
+      "id": "eb7ff1b7-7dc7-43eb-8ff3-a0df778f4a0c",
+      "position": [
+        0.22944325331770477,
+        -0.059344436312172455,
+        0.021943315420945287
+      ],
+      "rotation": [
+        -0.2988362387301195,
+        0.6408563820557888,
+        0.6408563820557887,
+        -0.2988362387301196
+      ],
+      "scale": [
+        0.002631578947368428,
+        0.002631578947368419,
+        0.002631578947368428
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "d35cff39-edd6-4547-90f2-a15ee4c1a085",
+      "components": {},
+      "gltfModel": {
+        "src": {
+          "type": "asset",
+          "asset": "assets/Ocelote.glb"
+        },
+        "animationClip": "Take 001",
+        "loop": true
+      },
+      "name": "Ocelote.glb (1)",
+      "order": 24.054157824666884
     }
   },
   "spaces": {
