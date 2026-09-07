@@ -32,9 +32,13 @@
       "camera": {
         "type": "perspective",
         "xr": {
-          "desktop": "3D",
-          "xrCameraType": "3dOnly",
-          "headset": "disabled"
+          "desktop": "disabled",
+          "xrCameraType": "world",
+          "headset": "disabled",
+          "phone": "AR",
+          "world": {
+            "disableWorldTracking": true
+          }
         }
       },
       "components": {},
@@ -93,24 +97,24 @@
     "4bd19726-543e-4548-ace1-2de966335a99": {
       "id": "4bd19726-543e-4548-ace1-2de966335a99",
       "position": [
-        -0.06378347350998115,
-        0,
-        0.18773120722569936
+        0.0071262860809045425,
+        0.05775360399895435,
+        -4.569130860330072e-16
       ],
       "rotation": [
-        0,
-        0,
-        0,
-        1
+        0.6214175397860574,
+        -0.33740219508213615,
+        -0.3374021950821361,
+        0.6214175397860573
       ],
       "scale": [
-        1,
-        1,
-        1
+        1.0000000000000016,
+        1.0000000000000002,
+        1.0000000000000016
       ],
       "geometry": null,
       "material": null,
-      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "parentId": "8f3ddb5f-3f2f-4e91-a3ed-4442f943e7fe",
       "components": {},
       "gltfModel": {
         "src": {
@@ -121,7 +125,681 @@
         "loop": true
       },
       "name": "PArrot.glb",
-      "order": 2.442249872763749
+      "order": 4.066213498468755
+    },
+    "a711a664-2208-436b-add2-7e7ee9aefd1e": {
+      "id": "a711a664-2208-436b-add2-7e7ee9aefd1e",
+      "position": [
+        0.03094165701306184,
+        -0.11045547552354984,
+        2.452604242443309e-17
+      ],
+      "rotation": [
+        0.5572077475232345,
+        -0.43533840411808755,
+        -0.43533840411808744,
+        0.5572077475232347
+      ],
+      "scale": [
+        0.3000000000000004,
+        0.30000000000000016,
+        0.3000000000000004
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "a253df2c-dbde-4b26-a0c0-76b946590ebc",
+      "components": {},
+      "gltfModel": {
+        "src": {
+          "type": "asset",
+          "asset": "assets/Mono.glb"
+        },
+        "animationClip": "B1Idle",
+        "loop": true
+      },
+      "name": "Mono.glb",
+      "order": 6.138553447786061
+    },
+    "8fea6a02-b504-41e8-899e-b71e737d3179": {
+      "id": "8fea6a02-b504-41e8-899e-b71e737d3179",
+      "position": [
+        -0.05326322240664072,
+        -0.11566273897172685,
+        2.568228717952411e-17
+      ],
+      "rotation": [
+        0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "scale": [
+        0.03,
+        0.03,
+        0.03
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "ff209124-cff5-4b18-8309-83a0d991789f",
+      "components": {},
+      "gltfModel": {
+        "src": {
+          "type": "asset",
+          "asset": "assets/Oso.glb"
+        },
+        "animationClip": "idle",
+        "loop": true
+      },
+      "name": "Oso.glb",
+      "order": 7.517640167488926
+    },
+    "d5b4325d-8224-403d-b684-6cae7c39fd13": {
+      "id": "d5b4325d-8224-403d-b684-6cae7c39fd13",
+      "position": [
+        -0.03203426457078229,
+        0.0012134564908024004,
+        -2.694414670939339e-19
+      ],
+      "rotation": [
+        -0.4304593345768792,
+        0.5609855267969313,
+        0.5609855267969313,
+        -0.4304593345768792
+      ],
+      "scale": [
+        0.02000000000000002,
+        0.019999999999999997,
+        0.02000000000000002
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "adef287b-63d9-4913-bdd0-b0ecc8dd2a38",
+      "components": {},
+      "gltfModel": {
+        "src": {
+          "type": "asset",
+          "asset": "assets/Ocelote.glb"
+        },
+        "animationClip": "Take 001",
+        "loop": true
+      },
+      "name": "Ocelote.glb",
+      "order": 8.59706440691958
+    },
+    "542eeef6-6c22-4e24-824c-9e66f47c51f4": {
+      "id": "542eeef6-6c22-4e24-824c-9e66f47c51f4",
+      "position": [
+        0.3143812271053061,
+        0,
+        5.577102963245
+      ],
+      "rotation": [
+        -0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {},
+      "name": "Mapa_Target",
+      "imageTarget": {
+        "name": "Mapa_Target"
+      },
+      "order": 10.707918890818885
+    },
+    "fc165008-f764-47e8-9ac4-5240e74e002c": {
+      "id": "fc165008-f764-47e8-9ac4-5240e74e002c",
+      "position": [
+        0.26512759558497906,
+        -0.07455718080141782,
+        0.02701348420781734
+      ],
+      "rotation": [
+        0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "scale": [
+        0.7000000000000001,
+        0.7000000000000001,
+        0.7000000000000001
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "542eeef6-6c22-4e24-824c-9e66f47c51f4",
+      "components": {},
+      "gltfModel": {
+        "src": {
+          "type": "asset",
+          "asset": "assets/LocationPIN.glb"
+        },
+        "animationClip": "",
+        "loop": true
+      },
+      "name": "LocationPIN.glb",
+      "order": 12.7047720881433
+    },
+    "30e5f7bd-5ddd-48ee-abb6-399694491990": {
+      "id": "30e5f7bd-5ddd-48ee-abb6-399694491990",
+      "position": [
+        0.13368264984596917,
+        -0.030261917711900566,
+        0.02701348420781733
+      ],
+      "rotation": [
+        0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "scale": [
+        0.7000000000000001,
+        0.7000000000000001,
+        0.7000000000000001
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "542eeef6-6c22-4e24-824c-9e66f47c51f4",
+      "components": {},
+      "gltfModel": {
+        "src": {
+          "type": "asset",
+          "asset": "assets/LocationPIN.glb"
+        },
+        "animationClip": "",
+        "loop": true
+      },
+      "name": "LocationPIN.glb (1)",
+      "order": 14.481273637298173
+    },
+    "c10843d5-5fc9-4762-b590-665b401b9a28": {
+      "id": "c10843d5-5fc9-4762-b590-665b401b9a28",
+      "position": [
+        -0.28676266822248636,
+        -0.07096333114936026,
+        0.027013484207817337
+      ],
+      "rotation": [
+        0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "scale": [
+        0.7000000000000001,
+        0.7000000000000001,
+        0.7000000000000001
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "542eeef6-6c22-4e24-824c-9e66f47c51f4",
+      "components": {},
+      "gltfModel": {
+        "src": {
+          "type": "asset",
+          "asset": "assets/LocationPIN.glb"
+        },
+        "animationClip": "",
+        "loop": true
+      },
+      "name": "LocationPIN.glb (2)",
+      "order": 16.097853416695635
+    },
+    "f19f4baa-bddd-4e34-9102-cf6db9a4f29f": {
+      "id": "f19f4baa-bddd-4e34-9102-cf6db9a4f29f",
+      "position": [
+        -0.3765052538164898,
+        -0.09259448017668337,
+        0.027013484207817334
+      ],
+      "rotation": [
+        0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "scale": [
+        0.7000000000000001,
+        0.7000000000000001,
+        0.7000000000000001
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "542eeef6-6c22-4e24-824c-9e66f47c51f4",
+      "components": {},
+      "gltfModel": {
+        "src": {
+          "type": "asset",
+          "asset": "assets/LocationPIN.glb"
+        },
+        "animationClip": "",
+        "loop": true
+      },
+      "name": "LocationPIN.glb (3)",
+      "order": 17.456679209205372
+    },
+    "adef287b-63d9-4913-bdd0-b0ecc8dd2a38": {
+      "id": "adef287b-63d9-4913-bdd0-b0ecc8dd2a38",
+      "position": [
+        0.9814925064761473,
+        0,
+        3.516005540025115
+      ],
+      "rotation": [
+        -0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {},
+      "name": "O_Lamina",
+      "imageTarget": {
+        "name": "O_Lamina"
+      },
+      "order": 12.297425552463222
+    },
+    "ff209124-cff5-4b18-8309-83a0d991789f": {
+      "id": "ff209124-cff5-4b18-8309-83a0d991789f",
+      "position": [
+        1.8172018664732057,
+        0,
+        3.484770930726258
+      ],
+      "rotation": [
+        -0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {},
+      "name": "OA_Lamina",
+      "imageTarget": {
+        "name": "OA_Lamina"
+      },
+      "order": 13.383541734435267
+    },
+    "a253df2c-dbde-4b26-a0c0-76b946590ebc": {
+      "id": "a253df2c-dbde-4b26-a0c0-76b946590ebc",
+      "position": [
+        -0.6584449274814341,
+        0,
+        3.5172300068871114
+      ],
+      "rotation": [
+        -0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {},
+      "name": "MA_Lamina",
+      "imageTarget": {
+        "name": "MA_Lamina"
+      },
+      "order": 14.522977019749744
+    },
+    "8f3ddb5f-3f2f-4e91-a3ed-4442f943e7fe": {
+      "id": "8f3ddb5f-3f2f-4e91-a3ed-4442f943e7fe",
+      "position": [
+        0.1507033035143026,
+        4.440892098500626e-16,
+        3.536991907117764
+      ],
+      "rotation": [
+        -0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {},
+      "name": "G_Lamina",
+      "imageTarget": {
+        "name": "G_Lamina"
+      },
+      "order": 15.64292486921415
+    },
+    "d35cff39-edd6-4547-90f2-a15ee4c1a085": {
+      "id": "d35cff39-edd6-4547-90f2-a15ee4c1a085",
+      "position": [
+        2.9341586943537363,
+        0,
+        6.49776432685306
+      ],
+      "rotation": [
+        -0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "scale": [
+        3.8000000000000034,
+        3.8000000000000034,
+        3.8000000000000034
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {},
+      "name": "Ecosistema",
+      "imageTarget": {
+        "name": "Ecosistema"
+      },
+      "order": 17.433486818170376
+    },
+    "522bf927-076d-433a-b2e4-0ce83a8be7d6": {
+      "id": "522bf927-076d-433a-b2e4-0ce83a8be7d6",
+      "position": [
+        0.013743233816970069,
+        -0.0069306198090532956,
+        1.538906737386835e-18
+      ],
+      "rotation": [
+        0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "scale": [
+        0.023684210526315766,
+        0.023684210526315766,
+        0.023684210526315766
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "d35cff39-edd6-4547-90f2-a15ee4c1a085",
+      "components": {},
+      "gltfModel": {
+        "src": {
+          "type": "asset",
+          "asset": "assets/Ecosistema.glb"
+        },
+        "animationClip": "",
+        "loop": true
+      },
+      "name": "Ecosistema.glb",
+      "order": 19.033689463946544
+    },
+    "3cf6c9f2-0dd8-4ab7-8aa5-1b4c2c2a9030": {
+      "id": "3cf6c9f2-0dd8-4ab7-8aa5-1b4c2c2a9030",
+      "position": [
+        -0.10541835285007073,
+        0.2617248193900772,
+        0.01695494523450506
+      ],
+      "rotation": [
+        0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "scale": [
+        0.26315789473684187,
+        0.26315789473684187,
+        0.26315789473684187
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "d35cff39-edd6-4547-90f2-a15ee4c1a085",
+      "components": {},
+      "gltfModel": {
+        "src": {
+          "type": "asset",
+          "asset": "assets/Guacamaya.glb"
+        },
+        "animationClip": "ParrotALL_CircleFly",
+        "loop": true
+      },
+      "name": "Guacamaya.glb",
+      "order": 20.77179882877948
+    },
+    "96b81f22-da27-4f6e-b521-49f2f871013d": {
+      "id": "96b81f22-da27-4f6e-b521-49f2f871013d",
+      "position": [
+        0.1609595878724186,
+        0.08885482016629243,
+        0.14717946871686238
+      ],
+      "rotation": [
+        0.45817178677771725,
+        -0.5495076225726574,
+        -0.5568881826978647,
+        0.42189517478507943
+      ],
+      "scale": [
+        0.05,
+        0.05,
+        0.05
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "d35cff39-edd6-4547-90f2-a15ee4c1a085",
+      "components": {},
+      "gltfModel": {
+        "src": {
+          "type": "asset",
+          "asset": "assets/Mono.glb"
+        },
+        "animationClip": "Attack1",
+        "loop": true
+      },
+      "name": "Mono.glb (1)",
+      "order": 17.31706379483032
+    },
+    "6abb15d4-fe37-4956-9bd5-a6a3f33e3ea9": {
+      "id": "6abb15d4-fe37-4956-9bd5-a6a3f33e3ea9",
+      "position": [
+        -0.051194904010102626,
+        -0.09243492000047215,
+        0.02182136470935292
+      ],
+      "rotation": [
+        0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "scale": [
+        0.005263157894736838,
+        0.005263157894736838,
+        0.005263157894736838
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "d35cff39-edd6-4547-90f2-a15ee4c1a085",
+      "components": {},
+      "gltfModel": {
+        "src": {
+          "type": "asset",
+          "asset": "assets/Oso.glb"
+        },
+        "animationClip": "idle",
+        "loop": true
+      },
+      "name": "Oso.glb (1)",
+      "order": 22.295909789234745
+    },
+    "eb7ff1b7-7dc7-43eb-8ff3-a0df778f4a0c": {
+      "id": "eb7ff1b7-7dc7-43eb-8ff3-a0df778f4a0c",
+      "position": [
+        0.22944325331770477,
+        -0.059344436312172455,
+        0.021943315420945287
+      ],
+      "rotation": [
+        -0.2988362387301195,
+        0.6408563820557888,
+        0.6408563820557887,
+        -0.2988362387301196
+      ],
+      "scale": [
+        0.004,
+        0.004,
+        0.004
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "d35cff39-edd6-4547-90f2-a15ee4c1a085",
+      "components": {},
+      "gltfModel": {
+        "src": {
+          "type": "asset",
+          "asset": "assets/Ocelote.glb"
+        },
+        "animationClip": "Take 001",
+        "loop": true
+      },
+      "name": "Ocelote.glb (1)",
+      "order": 24.054157824666884
+    },
+    "71eac995-3f1d-4875-b9b5-6a0c149c8eda": {
+      "id": "71eac995-3f1d-4875-b9b5-6a0c149c8eda",
+      "position": [
+        -0.29024118818223854,
+        -0.33412714589798975,
+        2.003390939222511e-17
+      ],
+      "rotation": [
+        0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "scale": [
+        0.12195121951219524,
+        0.12195121951219524,
+        0.12195121951219524
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "2c20b57d-ce06-4515-99ef-0759fd39a67d",
+      "components": {
+        "978bad5b-3c9b-401d-8ac3-af8e942903e2": {
+          "id": "978bad5b-3c9b-401d-8ac3-af8e942903e2",
+          "name": "ExternalURLController",
+          "parameters": {
+            "url": "https://www.youtube.com/channel/UCQ4ECxkqBO7cAcG2W-U2DLg?view_as=subscriber"
+          }
+        }
+      },
+      "gltfModel": {
+        "src": {
+          "type": "asset",
+          "asset": "assets/YouTubeLogo.glb"
+        },
+        "animationClip": "",
+        "loop": true
+      },
+      "name": "YouTubeLogo.glb",
+      "order": 19.338726849314245
+    },
+    "65eae35d-a3e7-44ee-bff4-e96649968f43": {
+      "id": "65eae35d-a3e7-44ee-bff4-e96649968f43",
+      "position": [
+        -0.2671719028658409,
+        -0.19002549663810742,
+        4.2194136326691426e-17
+      ],
+      "rotation": [
+        0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "scale": [
+        0.12195121951219524,
+        0.12195121951219524,
+        0.12195121951219524
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "2c20b57d-ce06-4515-99ef-0759fd39a67d",
+      "components": {
+        "87b7b2af-0218-4840-af6e-801984e4492a": {
+          "id": "87b7b2af-0218-4840-af6e-801984e4492a",
+          "name": "ExternalURLController",
+          "parameters": {
+            "url": "https://www.instagram.com/parquedelaconservacion/"
+          }
+        }
+      },
+      "gltfModel": {
+        "src": {
+          "type": "asset",
+          "asset": "assets/IGLogo.glb"
+        },
+        "animationClip": "",
+        "loop": true
+      },
+      "name": "IGLogo.glb",
+      "order": 21.169909267854944
+    },
+    "2c20b57d-ce06-4515-99ef-0759fd39a67d": {
+      "id": "2c20b57d-ce06-4515-99ef-0759fd39a67d",
+      "position": [
+        -4.900027334452043,
+        0,
+        7.576836566415831
+      ],
+      "rotation": [
+        -0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "scale": [
+        8.199999999999992,
+        8.199999999999992,
+        8.199999999999992
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {},
+      "name": "Redes",
+      "imageTarget": {
+        "name": "Redes"
+      },
+      "order": 22.92359875954829
     }
   },
   "spaces": {
