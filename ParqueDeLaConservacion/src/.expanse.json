@@ -524,7 +524,8 @@
       "imageTarget": {
         "name": "Ecosistema"
       },
-      "order": 17.433486818170376
+      "order": 17.433486818170376,
+      "disabled": true
     },
     "522bf927-076d-433a-b2e4-0ce83a8be7d6": {
       "id": "522bf927-076d-433a-b2e4-0ce83a8be7d6",
@@ -800,6 +801,147 @@
         "name": "Redes"
       },
       "order": 22.92359875954829
+    },
+    "4ef9294a-85f8-438b-944a-83cfdd00a1bf": {
+      "id": "4ef9294a-85f8-438b-944a-83cfdd00a1bf",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {
+        "f18ba39a-d9c2-4255-9100-deac6da1be12": {
+          "id": "f18ba39a-d9c2-4255-9100-deac6da1be12",
+          "name": "Ecosistema Unlock Controller",
+          "parameters": {}
+        }
+      },
+      "name": "EcosistemaUnlockController",
+      "order": 23.98594275881099
+    },
+    "c488300a-fbf5-4e34-acd8-2069c992a2b0": {
+      "id": "c488300a-fbf5-4e34-acd8-2069c992a2b0",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {},
+      "ui": {
+        "width": 70,
+        "height": 10,
+        "text": "Buena tarde",
+        "color": "#ffffff",
+        "fontSize": 12,
+        "type": "overlay",
+        "textAlign": "left",
+        "font": {
+          "type": "font",
+          "font": "Press Start 2p"
+        }
+      },
+      "name": "Texto",
+      "order": 25.71842336269151,
+      "disabled": true
+    },
+    "d4d9a14e-a55b-4b25-a96e-ef7f5a701e33": {
+      "id": "d4d9a14e-a55b-4b25-a96e-ef7f5a701e33",
+      "position": [
+        0,
+        0,
+        4.310444250966786
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {},
+      "ui": {
+        "type": "3d",
+        "width": 100,
+        "height": 36,
+        "background": "#b0aab5",
+        "borderRadius": 18,
+        "flexDirection": "row",
+        "backgroundOpacity": 0.5,
+        "padding": "10",
+        "gap": "6",
+        "alignItems": "center",
+        "justifyContent": "center"
+      },
+      "name": "Information",
+      "order": 26.892754499046617,
+      "disabled": true
+    },
+    "457dfe77-7c25-4842-a2b0-0ce8e8a420c9": {
+      "id": "457dfe77-7c25-4842-a2b0-0ce8e8a420c9",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "d4d9a14e-a55b-4b25-a96e-ef7f5a701e33",
+      "components": {},
+      "name": "Texto",
+      "ui": {
+        "width": 50,
+        "height": 14,
+        "text": "Informacion",
+        "color": "#ffffff",
+        "fontSize": 9
+      },
+      "order": 1.1047454048776597
     }
   },
   "spaces": {
