@@ -827,7 +827,12 @@
         "f18ba39a-d9c2-4255-9100-deac6da1be12": {
           "id": "f18ba39a-d9c2-4255-9100-deac6da1be12",
           "name": "Ecosistema Unlock Controller",
-          "parameters": {}
+          "parameters": {
+            "ecosistema": {
+              "type": "entity",
+              "id": "d35cff39-edd6-4547-90f2-a15ee4c1a085"
+            }
+          }
         }
       },
       "name": "EcosistemaUnlockController",

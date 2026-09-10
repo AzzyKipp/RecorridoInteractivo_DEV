@@ -3,7 +3,11 @@ import * as ecs from '@8thwall/ecs'
 const EcosistemaUnlockController = ecs.registerComponent({
   name: 'Ecosistema Unlock Controller',
 
-  stateMachine: ({world, eid}) => {
+  schema: {
+    ecosistema: ecs.eid,
+  },
+
+  stateMachine: ({world, eid, schemaAttribute}) => {
 
     // ─────────────────────────────
     // TARGETS NECESARIOS
@@ -16,17 +20,17 @@ const EcosistemaUnlockController = ecs.registerComponent({
       'G_Lamina',
     ])
 
-    // Targets que ya fueron encontrados
+    // Targets encontrados
     const discoveredTargets = new Set<string>()
 
     // ─────────────────────────────
-    // CONFIGURACIÓN DEL SONIDO
+    // SONIDO
     // ─────────────────────────────
 
-    const feedbackSound = './assets/twinkle.mp3'
+    const feedbackSound = './assets/feedback.mp3'
 
     // ─────────────────────────────
-    // DETECCIÓN DE IMAGE TARGETS
+    // IMAGE TARGETS
     // ─────────────────────────────
 
     ecs.defineState('default')
@@ -38,46 +42,42 @@ const EcosistemaUnlockController = ecs.registerComponent({
 
           const targetName = event.data.name
 
-          console.log('🎯 TARGET ENCONTRADO:', targetName)
-
-          // Ignorar targets que no necesitamos
+          // Ignorar otros targets
           if (!requiredTargets.has(targetName)) {
             return
           }
 
-          // Si ya fue encontrado anteriormente,
-          // no volver a contarlo
+          // No volver a contar un target ya descubierto
           if (discoveredTargets.has(targetName)) {
             return
           }
 
-          // Guardar el target
+          // Registrar descubrimiento
           discoveredTargets.add(targetName)
 
           console.log(
             `🌿 PROGRESO: ${discoveredTargets.size}/4`
           )
 
-          // ─────────────────────────
-          // SONIDO DE FEEDBACK
-          // ─────────────────────────
-
+          // Sonido individual
           playFeedbackSound()
 
           // ─────────────────────────
-          // COMPLETAR LOS 4 TARGETS
+          // 4/4 COMPLETADO
           // ─────────────────────────
 
           if (discoveredTargets.size === 4) {
 
-            console.log(
-              '🎉🎉🎉 ¡LOS 4 TARGETS FUERON ENCONTRADOS!'
-            )
+            console.log('🎉 ¡LOS 4 TARGETS ENCONTRADOS!')
 
-            // Por ahora solo hacemos
-            // un segundo sonido especial
-            // en el siguiente paso podemos
-            // activar Ecosistema aquí.
+            // Obtener la entidad Ecosistema
+            const ecosistemaEid =
+              schemaAttribute.get(eid).ecosistema
+
+            // Mostrar Ecosistema
+            ecs.Hidden.remove(world, ecosistemaEid)
+
+            console.log('🌿 ¡ECOSISTEMA DESBLOQUEADO!')
           }
         }
       )
@@ -88,9 +88,6 @@ const EcosistemaUnlockController = ecs.registerComponent({
 
     function playFeedbackSound() {
 
-      console.log('🔊 REPRODUCIENDO FEEDBACK')
-
-      // Creamos/configuramos el audio
       ecs.Audio.set(world, eid, {
         url: feedbackSound,
         volume: 1,
