@@ -39,6 +39,12 @@ const EcosistemaUnlockController = ecs.registerComponent({
 
           const targetName = event.data.name
 
+              // 🌿🔊 Sonido cuando se escanea el Ecosistema
+          if (targetName === 'Ecosistema') {
+            playEcosistemaSound()
+            return
+          }
+
           if (!requiredTargets.has(targetName)) {
             return
           }
@@ -79,7 +85,25 @@ const EcosistemaUnlockController = ecs.registerComponent({
         maxDistance: 10000,
       })
     }
+
+    function playEcosistemaSound() {
+  ecs.Audio.set(world, eid, {
+    url: './assets/pitched_twink.mp3',
+    volume: 1,
+    loop: false,
+    paused: false,
+    pitch: 1,
+    positional: false,
+    refDistance: 1,
+    distanceModel: 'inverse',
+    rolloffFactor: 1,
+    maxDistance: 10000,
+  })
+}
+
   },
+
+  
 })
 
 export {EcosistemaUnlockController}

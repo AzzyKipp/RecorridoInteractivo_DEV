@@ -838,57 +838,18 @@
       "name": "EcosistemaUnlockController",
       "order": 23.98594275881099
     },
-    "c488300a-fbf5-4e34-acd8-2069c992a2b0": {
-      "id": "c488300a-fbf5-4e34-acd8-2069c992a2b0",
-      "position": [
-        0,
-        0,
-        0
-      ],
-      "rotation": [
-        0,
-        0,
-        0,
-        1
-      ],
-      "scale": [
-        1,
-        1,
-        1
-      ],
-      "geometry": null,
-      "material": null,
-      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
-      "components": {},
-      "ui": {
-        "width": 70,
-        "height": 10,
-        "text": "Buena tarde",
-        "color": "#ffffff",
-        "fontSize": 12,
-        "type": "overlay",
-        "textAlign": "left",
-        "font": {
-          "type": "font",
-          "font": "Press Start 2p"
-        }
-      },
-      "name": "Texto",
-      "order": 25.71842336269151,
-      "disabled": true
-    },
     "d4d9a14e-a55b-4b25-a96e-ef7f5a701e33": {
       "id": "d4d9a14e-a55b-4b25-a96e-ef7f5a701e33",
       "position": [
+        0.14674010377818153,
         0,
-        0,
-        4.310444250966786
+        4.296382548896873
       ],
       "rotation": [
+        -0.7071067811865475,
         0,
         0,
-        0,
-        1
+        0.7071067811865476
       ],
       "scale": [
         1,
@@ -901,23 +862,154 @@
       "components": {},
       "ui": {
         "type": "3d",
-        "width": 100,
+        "width": 36,
         "height": 36,
-        "background": "#b0aab5",
+        "background": "#5ace77",
         "borderRadius": 18,
         "flexDirection": "row",
-        "backgroundOpacity": 0.5,
+        "backgroundOpacity": 1,
         "padding": "10",
         "gap": "6",
         "alignItems": "center",
-        "justifyContent": "center"
+        "justifyContent": "center",
+        "flexWrap": "nowrap",
+        "image": {
+          "type": "asset",
+          "asset": "assets/INFO.png"
+        },
+        "backgroundSize": "contain"
       },
       "name": "Information",
-      "order": 26.892754499046617,
-      "disabled": true
+      "order": 26.892754499046617
     },
-    "457dfe77-7c25-4842-a2b0-0ce8e8a420c9": {
-      "id": "457dfe77-7c25-4842-a2b0-0ce8e8a420c9",
+    "ff3dd6bd-9297-4df2-b8c1-bebcad3b88e7": {
+      "id": "ff3dd6bd-9297-4df2-b8c1-bebcad3b88e7",
+      "position": [
+        14.212459180731205,
+        4.498816847294776,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "9221b768-f760-42c5-bb92-af79298cc59f",
+      "components": {},
+      "ui": {
+        "width": 765,
+        "height": 799,
+        "type": "overlay",
+        "background": "#12491c",
+        "backgroundOpacity": 0.9100000000000003,
+        "image": {
+          "type": "asset",
+          "asset": "assets/BlurColor.png"
+        },
+        "backgroundSize": "cover",
+        "borderRadius": 0
+      },
+      "name": "BlurBackground",
+      "order": 1.6813338267751237
+    },
+    "732d21ec-a698-4ca2-8e84-a447b8c3995b": {
+      "id": "732d21ec-a698-4ca2-8e84-a447b8c3995b",
+      "position": [
+        14.178766746576919,
+        4.577173512447311,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        3.700000000000002,
+        3.700000000000002,
+        3.700000000000002
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "9221b768-f760-42c5-bb92-af79298cc59f",
+      "components": {},
+      "ui": {
+        "flexDirection": "row",
+        "width": 319,
+        "height": 259,
+        "type": "overlay",
+        "background": "#ffffff",
+        "backgroundOpacity": 1,
+        "image": {
+          "type": "asset",
+          "asset": "assets/Box.png"
+        },
+        "backgroundSize": "contain",
+        "alignItems": "center",
+        "justifyContent": "center",
+        "position": "absolute",
+        "top": 216,
+        "left": 43,
+        "bottom": "",
+        "right": ""
+      },
+      "name": "PopupBox",
+      "order": 3.395642793678486
+    },
+    "3feb52f3-0803-4ffe-91db-1e5e06a5c9bf": {
+      "id": "3feb52f3-0803-4ffe-91db-1e5e06a5c9bf",
+      "position": [
+        18.219518512223033,
+        6.758000938352632,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "9221b768-f760-42c5-bb92-af79298cc59f",
+      "components": {},
+      "ui": {
+        "type": "3d",
+        "width": 35,
+        "height": 35,
+        "background": "#446019",
+        "borderRadius": 18,
+        "flexDirection": "row",
+        "backgroundOpacity": 0.8199999999999998,
+        "padding": "10",
+        "gap": "6",
+        "alignItems": "flex-start",
+        "justifyContent": "flex-end",
+        "position": "absolute",
+        "top": 18,
+        "left": "",
+        "bottom": "",
+        "right": 16
+      },
+      "name": "CloseButton",
+      "order": 5.147825894781773
+    },
+    "1b481820-280a-4fc5-88db-c4f31cecbf6e": {
+      "id": "1b481820-280a-4fc5-88db-c4f31cecbf6e",
       "position": [
         0,
         0,
@@ -936,17 +1028,54 @@
       ],
       "geometry": null,
       "material": null,
-      "parentId": "d4d9a14e-a55b-4b25-a96e-ef7f5a701e33",
+      "parentId": "3feb52f3-0803-4ffe-91db-1e5e06a5c9bf",
       "components": {},
-      "name": "Texto",
+      "name": "Texto (1)",
       "ui": {
-        "width": 50,
+        "width": 14,
         "height": 14,
-        "text": "Informacion",
+        "text": "X",
         "color": "#ffffff",
-        "fontSize": 9
+        "fontSize": 16,
+        "font": {
+          "type": "font",
+          "font": "Press Start 2p"
+        }
       },
-      "order": 1.1047454048776597
+      "order": 1.0490481371889746
+    },
+    "9221b768-f760-42c5-bb92-af79298cc59f": {
+      "id": "9221b768-f760-42c5-bb92-af79298cc59f",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {},
+      "ui": {
+        "width": 100,
+        "height": 100,
+        "type": "overlay",
+        "background": "#ffffff",
+        "backgroundOpacity": 0
+      },
+      "name": "Popup",
+      "order": 30.180981712372464,
+      "disabled": true
     }
   },
   "spaces": {
