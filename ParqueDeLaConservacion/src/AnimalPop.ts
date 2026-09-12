@@ -29,41 +29,44 @@ const AnimalPop = ecs.registerComponent({
 
           hasPopped = true
 
-          // 🐆 Aumentar 5%
+          // 🐆 POP: escala original → +0.05
           ecs.ScaleAnimation.set(world, eid, {
             fromX: originalScale.x,
             fromY: originalScale.y,
             fromZ: originalScale.z,
 
-            toX: originalScale.x * 1.05,
-            toY: originalScale.y * 1.05,
-            toZ: originalScale.z * 1.05,
+            toX: originalScale.x + 0.05,
+            toY: originalScale.y + 0.05,
+            toZ: originalScale.z + 0.05,
 
-            duration: 150,
+            duration: 180,
             loop: false,
             easeIn: false,
             easeOut: true,
-            easingFunction: 'EaseOut',
+            easingFunction: 'Back',
           })
 
-          // Después volvemos a la escala ORIGINAL
+          // Esperamos a que termine el aumento
           setTimeout(() => {
+
+            // 🔄 Volver explícitamente a la escala original
             ecs.ScaleAnimation.set(world, eid, {
-              fromX: originalScale.x * 1.05,
-              fromY: originalScale.y * 1.05,
-              fromZ: originalScale.z * 1.05,
+              fromX: originalScale.x + 0.05,
+              fromY: originalScale.y + 0.05,
+              fromZ: originalScale.z + 0.05,
 
               toX: originalScale.x,
               toY: originalScale.y,
               toZ: originalScale.z,
 
-              duration: 150,
+              duration: 180,
               loop: false,
               easeIn: true,
               easeOut: false,
-              easingFunction: 'EaseIn',
+              easingFunction: 'Cubic',
             })
-          }, 150)
+
+          }, 180)
         }
       )
   },
