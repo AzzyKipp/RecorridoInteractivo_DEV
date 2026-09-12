@@ -1,3 +1,4 @@
+
 import * as ecs from '@8thwall/ecs'
 
 const AnimalPop = ecs.registerComponent({
