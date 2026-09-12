@@ -7,8 +7,12 @@ const AnimalPop = ecs.registerComponent({
 
     let hasPopped = false
 
-    // Guardamos la escala original del modelo
-    const originalScale = ecs.Scale.get(world, eid)
+    // Guardamos los valores numéricos de la escala ORIGINAL
+    const scale = ecs.Scale.get(world, eid)
+
+    const originalX = scale.x
+    const originalY = scale.y
+    const originalZ = scale.z
 
     ecs.defineState('waiting')
       .initial()
@@ -31,13 +35,13 @@ const AnimalPop = ecs.registerComponent({
 
           // 🐆 POP: escala original → +0.05
           ecs.ScaleAnimation.set(world, eid, {
-            fromX: originalScale.x,
-            fromY: originalScale.y,
-            fromZ: originalScale.z,
+            fromX: originalX,
+            fromY: originalY,
+            fromZ: originalZ,
 
-            toX: originalScale.x + 0.05,
-            toY: originalScale.y + 0.05,
-            toZ: originalScale.z + 0.05,
+            toX: originalX + 0.005,
+            toY: originalY + 0.005,
+            toZ: originalZ + 0.005,
 
             duration: 180,
             loop: false,
@@ -46,26 +50,13 @@ const AnimalPop = ecs.registerComponent({
             easingFunction: 'Back',
           })
 
-          // Esperamos a que termine el aumento
+          // 🔄 Volver a la escala original
           setTimeout(() => {
-
-            // 🔄 Volver explícitamente a la escala original
-            ecs.ScaleAnimation.set(world, eid, {
-              fromX: originalScale.x + 0.05,
-              fromY: originalScale.y + 0.05,
-              fromZ: originalScale.z + 0.05,
-
-              toX: originalScale.x,
-              toY: originalScale.y,
-              toZ: originalScale.z,
-
-              duration: 180,
-              loop: false,
-              easeIn: true,
-              easeOut: false,
-              easingFunction: 'Cubic',
+            ecs.Scale.set(world, eid, {
+              x: originalX,
+              y: originalY,
+              z: originalZ,
             })
-
           }, 180)
         }
       )

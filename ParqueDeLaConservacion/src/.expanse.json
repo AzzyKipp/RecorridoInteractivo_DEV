@@ -1099,8 +1099,7 @@
         "backgroundOpacity": 0
       },
       "name": "Popup",
-      "order": 30.180981712372464,
-      "disabled": true
+      "order": 30.180981712372464
     }
   },
   "spaces": {
