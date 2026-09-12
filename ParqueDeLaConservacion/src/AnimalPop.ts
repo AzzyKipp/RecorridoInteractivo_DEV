@@ -7,7 +7,7 @@ const AnimalPop = ecs.registerComponent({
 
     let hasPopped = false
 
-    // Guardamos la escala ORIGINAL del modelo
+    // Guardamos la escala original del modelo
     const originalScale = ecs.Scale.get(world, eid)
 
     ecs.defineState('waiting')
@@ -21,8 +21,6 @@ const AnimalPop = ecs.registerComponent({
             return
           }
 
-          // Este componente se pondrá sobre el modelo
-          // y aquí comprobamos qué target fue encontrado.
           const targetName = event.data.name
 
           if (targetName !== 'O_Lamina') {
@@ -31,23 +29,41 @@ const AnimalPop = ecs.registerComponent({
 
           hasPopped = true
 
-          // 🐆 POP: escala original → 115%
+          // 🐆 Aumentar 5%
           ecs.ScaleAnimation.set(world, eid, {
             fromX: originalScale.x,
             fromY: originalScale.y,
             fromZ: originalScale.z,
 
-            toX: originalScale.x * 1.15,
-            toY: originalScale.y * 1.15,
-            toZ: originalScale.z * 1.15,
+            toX: originalScale.x * 1.05,
+            toY: originalScale.y * 1.05,
+            toZ: originalScale.z * 1.05,
 
-            duration: 180,
+            duration: 150,
             loop: false,
-            reverse: true,
             easeIn: false,
             easeOut: true,
-            easingFunction: 'Back',
+            easingFunction: 'EaseOut',
           })
+
+          // Después volvemos a la escala ORIGINAL
+          setTimeout(() => {
+            ecs.ScaleAnimation.set(world, eid, {
+              fromX: originalScale.x * 1.05,
+              fromY: originalScale.y * 1.05,
+              fromZ: originalScale.z * 1.05,
+
+              toX: originalScale.x,
+              toY: originalScale.y,
+              toZ: originalScale.z,
+
+              duration: 150,
+              loop: false,
+              easeIn: true,
+              easeOut: false,
+              easingFunction: 'EaseIn',
+            })
+          }, 150)
         }
       )
   },
