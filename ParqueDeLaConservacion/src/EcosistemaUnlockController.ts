@@ -20,21 +20,18 @@ const EcosistemaUnlockController = ecs.registerComponent({
 
     const feedbackSound = './assets/twinkle.mp3'
 
-    // ─────────────────────────────
-    // OCULTAR ECOSISTEMA AL INICIAR
-    // ─────────────────────────────
     ecs.defineState('default')
       .initial()
 
       .onEnter(() => {
-        const ecosistemaEid = schemaAttribute.get(eid).ecosistema
+        const ecosistemaEid =
+          schemaAttribute.get(eid).ecosistema
 
-        ecs.Hidden.set(world, ecosistemaEid)
+        if (ecosistemaEid) {
+          ecs.Disabled.set(world, ecosistemaEid)
+        }
       })
 
-      // ─────────────────────────────
-      // DETECTAR ANIMALES
-      // ─────────────────────────────
       .listen(
         world.events.globalId,
         ecs.events.REALITY_IMAGE_FOUND,
@@ -46,36 +43,29 @@ const EcosistemaUnlockController = ecs.registerComponent({
             return
           }
 
-          // Si ya fue encontrado, no hacer nada
           if (discoveredTargets.has(targetName)) {
             return
           }
 
-          // Registrar descubrimiento
           discoveredTargets.add(targetName)
 
-          // Sonido
+          // 🔊 Sonido
           playFeedbackSound()
 
-          // ─────────────────────────────
-          // LOS 4 FUERON ENCONTRADOS
-          // ─────────────────────────────
+          // 🌿 Desbloquear al encontrar los 4
           if (discoveredTargets.size === 4) {
 
             const ecosistemaEid =
               schemaAttribute.get(eid).ecosistema
 
-            // Mostrar Ecosistema
-            ecs.Hidden.remove(world, ecosistemaEid)
+            if (ecosistemaEid) {
+              ecs.Disabled.remove(world, ecosistemaEid)
+            }
           }
         }
       )
 
-    // ─────────────────────────────
-    // SONIDO
-    // ─────────────────────────────
     function playFeedbackSound() {
-
       ecs.Audio.set(world, eid, {
         url: feedbackSound,
         volume: 1,
