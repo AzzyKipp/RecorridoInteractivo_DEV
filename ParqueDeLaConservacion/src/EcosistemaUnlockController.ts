@@ -19,6 +19,7 @@ const EcosistemaUnlockController = ecs.registerComponent({
     const discoveredTargets = new Set<string>()
 
     const feedbackSound = './assets/twinkle.mp3'
+    const ecosistemaSound = './assets/pitched_twink.mp3'
 
     ecs.defineState('default')
       .initial()
@@ -39,12 +40,23 @@ const EcosistemaUnlockController = ecs.registerComponent({
 
           const targetName = event.data.name
 
-              // 🌿🔊 Sonido cuando se escanea el Ecosistema
+          // 🌿 Ecosistema
+          // Solo suena si ya fue desbloqueado
           if (targetName === 'Ecosistema') {
-            playEcosistemaSound()
+            const ecosistemaEid =
+              schemaAttribute.get(eid).ecosistema
+
+            if (
+              ecosistemaEid &&
+              !ecs.Disabled.has(world, ecosistemaEid)
+            ) {
+              playEcosistemaSound()
+            }
+
             return
           }
 
+          // 🐆🐻🐒🦜 Animales
           if (!requiredTargets.has(targetName)) {
             return
           }
@@ -55,7 +67,7 @@ const EcosistemaUnlockController = ecs.registerComponent({
 
           discoveredTargets.add(targetName)
 
-          // 🔊 Sonido
+          // 🔊 Sonido del animal
           playFeedbackSound()
 
           // 🌿 Desbloquear al encontrar los 4
@@ -87,23 +99,20 @@ const EcosistemaUnlockController = ecs.registerComponent({
     }
 
     function playEcosistemaSound() {
-  ecs.Audio.set(world, eid, {
-    url: './assets/pitched_twink.mp3',
-    volume: 1,
-    loop: false,
-    paused: false,
-    pitch: 1,
-    positional: false,
-    refDistance: 1,
-    distanceModel: 'inverse',
-    rolloffFactor: 1,
-    maxDistance: 10000,
-  })
-}
-
+      ecs.Audio.set(world, eid, {
+        url: ecosistemaSound,
+        volume: 1,
+        loop: false,
+        paused: false,
+        pitch: 1,
+        positional: false,
+        refDistance: 1,
+        distanceModel: 'inverse',
+        rolloffFactor: 1,
+        maxDistance: 10000,
+      })
+    }
   },
-
-  
 })
 
 export {EcosistemaUnlockController}

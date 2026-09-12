@@ -115,7 +115,13 @@
       "geometry": null,
       "material": null,
       "parentId": "8f3ddb5f-3f2f-4e91-a3ed-4442f943e7fe",
-      "components": {},
+      "components": {
+        "29b5156e-a173-4768-9fbb-9fbefb596ae1": {
+          "id": "29b5156e-a173-4768-9fbb-9fbefb596ae1",
+          "name": "Animal Pop",
+          "parameters": {}
+        }
+      },
       "gltfModel": {
         "src": {
           "type": "asset",
@@ -148,7 +154,13 @@
       "geometry": null,
       "material": null,
       "parentId": "a253df2c-dbde-4b26-a0c0-76b946590ebc",
-      "components": {},
+      "components": {
+        "4efc0a24-8567-4b47-b9d1-02471f13c6d9": {
+          "id": "4efc0a24-8567-4b47-b9d1-02471f13c6d9",
+          "name": "Animal Pop",
+          "parameters": {}
+        }
+      },
       "gltfModel": {
         "src": {
           "type": "asset",
@@ -181,7 +193,13 @@
       "geometry": null,
       "material": null,
       "parentId": "ff209124-cff5-4b18-8309-83a0d991789f",
-      "components": {},
+      "components": {
+        "93e0cc9d-d4ac-4c9b-a72f-846dc46d3a8a": {
+          "id": "93e0cc9d-d4ac-4c9b-a72f-846dc46d3a8a",
+          "name": "Animal Pop",
+          "parameters": {}
+        }
+      },
       "gltfModel": {
         "src": {
           "type": "asset",
@@ -214,7 +232,13 @@
       "geometry": null,
       "material": null,
       "parentId": "adef287b-63d9-4913-bdd0-b0ecc8dd2a38",
-      "components": {},
+      "components": {
+        "063cef81-652c-4a4e-aafb-9c639f732d89": {
+          "id": "063cef81-652c-4a4e-aafb-9c639f732d89",
+          "name": "Animal Pop",
+          "parameters": {}
+        }
+      },
       "gltfModel": {
         "src": {
           "type": "asset",
@@ -880,7 +904,8 @@
         "backgroundSize": "contain"
       },
       "name": "Information",
-      "order": 26.892754499046617
+      "order": 26.892754499046617,
+      "disabled": true
     },
     "ff3dd6bd-9297-4df2-b8c1-bebcad3b88e7": {
       "id": "ff3dd6bd-9297-4df2-b8c1-bebcad3b88e7",
