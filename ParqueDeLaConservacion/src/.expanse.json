@@ -135,6 +135,9 @@
               }
             },
             "components": {}
+          },
+          "c1fdbc9e-26bf-4377-b7fd-310c4389c727": {
+            "deleted": true
           }
         }
       },
@@ -375,7 +378,11 @@
         "color": "#ffffff",
         "fontSize": 12,
         "type": "3d",
-        "textAlign": "center"
+        "textAlign": "center",
+        "font": {
+          "type": "font",
+          "font": "assets/Fuentes/Poppins/Poppins-Regular.json"
+        }
       },
       "name": "PopupText",
       "order": 1.0529250286656695
@@ -830,10 +837,10 @@
         3.5172300068871114
       ],
       "rotation": [
-        -0.7071067811865475,
         0,
         0,
-        0.7071067811865476
+        0,
+        1
       ],
       "scale": [
         1,
