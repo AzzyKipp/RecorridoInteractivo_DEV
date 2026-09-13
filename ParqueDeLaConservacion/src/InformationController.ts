@@ -14,9 +14,10 @@ export const InformationController = ecs.registerComponent({
         const {popup} = schemaAttribute.get(eid)
 
         console.log('🔵 INFORMATION FUNCIONA')
+        console.log('🟡 POPUP RECIBIDO:', popup)
 
         if (popup) {
-          ecs.Hidden.remove(world, popup)
+          world.getEntity(popup).enable()
 
           console.log('🟢 POPUP ABIERTO')
         }

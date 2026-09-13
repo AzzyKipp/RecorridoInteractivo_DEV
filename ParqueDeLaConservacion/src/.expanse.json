@@ -25,7 +25,18 @@
         "children": {}
       },
       "parentId": "a253df2c-dbde-4b26-a0c0-76b946590ebc",
-      "components": {},
+      "components": {
+        "79b2f1f2-a305-40b8-b071-57feebce494a": {
+          "id": "79b2f1f2-a305-40b8-b071-57feebce494a",
+          "name": "InformationController",
+          "parameters": {
+            "popup": {
+              "type": "entity",
+              "id": "9221b768-f760-42c5-bb92-af79298cc59f"
+            }
+          }
+        }
+      },
       "order": 7.197281684742069
     },
     "b92a7d5c-9ac4-4811-ba98-4b8c4ef8050c": {
@@ -105,16 +116,11 @@
             "id": "3c0e9c53-12c0-4053-8ff5-21fd7dab7231",
             "deletions": {
               "components": {
-                "97c56d9a-c491-4720-8c58-2fa93b844262": true
+                "97c56d9a-c491-4720-8c58-2fa93b844262": true,
+                "b996e530-a4fd-4951-997b-69df4db2efc5": true
               }
             },
-            "components": {
-              "b996e530-a4fd-4951-997b-69df4db2efc5": {
-                "id": "b996e530-a4fd-4951-997b-69df4db2efc5",
-                "name": "PopupCloseButton",
-                "parameters": {}
-              }
-            }
+            "components": {}
           }
         }
       },
@@ -145,7 +151,12 @@
         "9e90ae6b-0358-4962-99d3-161de0780fd3": {
           "id": "9e90ae6b-0358-4962-99d3-161de0780fd3",
           "name": "PopupController",
-          "parameters": {}
+          "parameters": {
+            "closeButton": {
+              "type": "entity",
+              "id": "3c0e9c53-12c0-4053-8ff5-21fd7dab7231"
+            }
+          }
         }
       },
       "ui": {
@@ -263,18 +274,7 @@
       "geometry": null,
       "material": null,
       "parentId": "872ce669-3de6-41a5-883b-1f71c5aee3d6",
-      "components": {
-        "97c56d9a-c491-4720-8c58-2fa93b844262": {
-          "id": "97c56d9a-c491-4720-8c58-2fa93b844262",
-          "name": "PopupCloseButton",
-          "parameters": {
-            "popup": {
-              "type": "entity",
-              "id": "872ce669-3de6-41a5-883b-1f71c5aee3d6"
-            }
-          }
-        }
-      },
+      "components": {},
       "ui": {
         "type": "3d",
         "width": 35,
@@ -816,10 +816,10 @@
         3.5172300068871114
       ],
       "rotation": [
-        -0.7071067811865475,
         0,
         0,
-        0.7071067811865476
+        0,
+        1
       ],
       "scale": [
         1,

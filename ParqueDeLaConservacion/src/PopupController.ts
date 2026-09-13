@@ -3,16 +3,21 @@ import * as ecs from '@8thwall/ecs'
 export const PopupController = ecs.registerComponent({
   name: 'PopupController',
 
-  stateMachine: ({world, eid}) => {
+  schema: {
+    closeButton: ecs.eid,
+  },
+
+  stateMachine: ({world, eid, schemaAttribute}) => {
+    const {closeButton} = schemaAttribute.get(eid)
+
     ecs.defineState('default')
       .initial()
-      .listen(eid, ecs.input.UI_CLICK, () => {
-        console.log('🟣 CLICK RECIBIDO POR POPUP')
+      .listen(closeButton, ecs.input.UI_CLICK, () => {
+        console.log('🔴 CLOSE BUTTON → CERRANDO POPUP')
 
-        ecs.Hidden.set(world, eid)
+        world.getEntity(eid).disable()
 
-        console.log('🟢 POPUP OCULTADO')
+        console.log('🟣 POPUP DESACTIVADO')
       })
   },
 })
-
