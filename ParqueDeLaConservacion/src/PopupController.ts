@@ -3,20 +3,16 @@ import * as ecs from '@8thwall/ecs'
 export const PopupController = ecs.registerComponent({
   name: 'PopupController',
 
-  schema: {
-    popupText: ecs.string,
-  },
+  stateMachine: ({world, eid}) => {
+    ecs.defineState('default')
+      .initial()
+      .listen(eid, ecs.input.UI_CLICK, () => {
+        console.log('🟣 CLICK RECIBIDO POR POPUP')
 
-  schemaDefaults: {
-    popupText: 'Texto del popup',
-  },
+        ecs.Hidden.set(world, eid)
 
-  add: (world, component) => {
-    // Por ahora dejamos el Popup visible.
-  },
-
-  remove: (world, component) => {
-    // No necesitamos hacer nada al eliminar el componente.
+        console.log('🟢 POPUP OCULTADO')
+      })
   },
 })
 

@@ -3,20 +3,16 @@ import * as ecs from '@8thwall/ecs'
 export const PopupCloseButton = ecs.registerComponent({
   name: 'PopupCloseButton',
 
-  schema: {
-    // @label Popup
-    popup: ecs.eid,
-  },
-
-  stateMachine: ({world, eid, schemaAttribute}) => {
+  stateMachine: ({world, eid}) => {
     ecs.defineState('default')
       .initial()
       .listen(eid, ecs.input.UI_CLICK, () => {
-        const {popup} = schemaAttribute.get(eid)
+        console.log('🔴 CLOSE BUTTON FUNCIONA')
 
-        if (popup) {
-          ecs.Hidden.set(world, popup)
-        }
+        ecs.Hidden.set(world, eid)
+
+        console.log('🟢 HIDDEN APLICADO')
       })
   },
 })
+

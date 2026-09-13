@@ -1,5 +1,83 @@
 {
   "objects": {
+    "d4d9a14e-a55b-4b25-a96e-ef7f5a701e33": {
+      "id": "d4d9a14e-a55b-4b25-a96e-ef7f5a701e33",
+      "position": [
+        -0.6466513450491427,
+        -0.01560193719712677,
+        3.464325981001164e-18
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "name": "Information",
+      "instanceData": {
+        "instanceOf": "b92a7d5c-9ac4-4811-ba98-4b8c4ef8050c",
+        "deletions": {},
+        "children": {}
+      },
+      "parentId": "a253df2c-dbde-4b26-a0c0-76b946590ebc",
+      "components": {},
+      "order": 7.197281684742069
+    },
+    "b92a7d5c-9ac4-4811-ba98-4b8c4ef8050c": {
+      "id": "b92a7d5c-9ac4-4811-ba98-4b8c4ef8050c",
+      "position": [
+        -1.3050962725305768,
+        0,
+        3.532831944084238
+      ],
+      "rotation": [
+        -0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "geometry": null,
+      "material": null,
+      "components": {
+        "79b2f1f2-a305-40b8-b071-57feebce494a": {
+          "id": "79b2f1f2-a305-40b8-b071-57feebce494a",
+          "name": "InformationController",
+          "parameters": {}
+        }
+      },
+      "ui": {
+        "type": "3d",
+        "width": 36,
+        "height": 36,
+        "background": "#5ace77",
+        "borderRadius": 18,
+        "flexDirection": "row",
+        "backgroundOpacity": 1,
+        "padding": "10",
+        "gap": "6",
+        "alignItems": "center",
+        "justifyContent": "center",
+        "flexWrap": "nowrap",
+        "image": {
+          "type": "asset",
+          "asset": "assets/INFO.png"
+        },
+        "backgroundSize": "contain"
+      },
+      "name": "Information",
+      "order": 26.892754499046617,
+      "prefab": true
+    },
     "9221b768-f760-42c5-bb92-af79298cc59f": {
       "id": "9221b768-f760-42c5-bb92-af79298cc59f",
       "position": [
@@ -1125,51 +1203,6 @@
       },
       "name": "EcosistemaUnlockController",
       "order": 23.98594275881099
-    },
-    "d4d9a14e-a55b-4b25-a96e-ef7f5a701e33": {
-      "id": "d4d9a14e-a55b-4b25-a96e-ef7f5a701e33",
-      "position": [
-        0.14674010377818153,
-        0,
-        4.296382548896873
-      ],
-      "rotation": [
-        -0.7071067811865475,
-        0,
-        0,
-        0.7071067811865476
-      ],
-      "scale": [
-        1,
-        1,
-        1
-      ],
-      "geometry": null,
-      "material": null,
-      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
-      "components": {},
-      "ui": {
-        "type": "3d",
-        "width": 36,
-        "height": 36,
-        "background": "#5ace77",
-        "borderRadius": 18,
-        "flexDirection": "row",
-        "backgroundOpacity": 1,
-        "padding": "10",
-        "gap": "6",
-        "alignItems": "center",
-        "justifyContent": "center",
-        "flexWrap": "nowrap",
-        "image": {
-          "type": "asset",
-          "asset": "assets/INFO.png"
-        },
-        "backgroundSize": "contain"
-      },
-      "name": "Information",
-      "order": 26.892754499046617,
-      "disabled": true
     }
   },
   "spaces": {
