@@ -33,7 +33,12 @@
             "popup": {
               "type": "entity",
               "id": "9221b768-f760-42c5-bb92-af79298cc59f"
-            }
+            },
+            "popupText": {
+              "type": "entity",
+              "id": "9221b768-f760-42c5-bb92-af79298cc59f/c1fdbc9e-26bf-4377-b7fd-310c4389c727"
+            },
+            "text": "MONO AULLADOR"
           }
         }
       },
@@ -42,15 +47,15 @@
     "b92a7d5c-9ac4-4811-ba98-4b8c4ef8050c": {
       "id": "b92a7d5c-9ac4-4811-ba98-4b8c4ef8050c",
       "position": [
-        -1.3050962725305768,
         0,
-        3.532831944084238
+        0,
+        0
       ],
       "rotation": [
-        -0.7071067811865475,
         0,
         0,
-        0.7071067811865476
+        0,
+        1
       ],
       "scale": [
         1,
@@ -63,7 +68,16 @@
         "79b2f1f2-a305-40b8-b071-57feebce494a": {
           "id": "79b2f1f2-a305-40b8-b071-57feebce494a",
           "name": "InformationController",
-          "parameters": {}
+          "parameters": {
+            "popup": {
+              "type": "entity",
+              "id": ""
+            },
+            "popupText": {
+              "type": "entity",
+              "id": ""
+            }
+          }
         }
       },
       "ui": {
@@ -757,7 +771,7 @@
       "position": [
         0.9814925064761473,
         0,
-        3.516005540025115
+        2.2010977768278304
       ],
       "rotation": [
         -0.7071067811865475,
@@ -816,10 +830,10 @@
         3.5172300068871114
       ],
       "rotation": [
+        -0.7071067811865475,
         0,
         0,
-        0,
-        1
+        0.7071067811865476
       ],
       "scale": [
         1,
@@ -841,7 +855,7 @@
       "position": [
         0.1507033035143026,
         4.440892098500626e-16,
-        3.536991907117764
+        2.2220841439204793
       ],
       "rotation": [
         -0.7071067811865475,
@@ -1203,6 +1217,135 @@
       },
       "name": "EcosistemaUnlockController",
       "order": 23.98594275881099
+    },
+    "0df0cf61-6252-486c-8a81-e2dd26ad0d6d": {
+      "id": "0df0cf61-6252-486c-8a81-e2dd26ad0d6d",
+      "position": [
+        0.6457747032642047,
+        0,
+        0
+      ],
+      "name": "Information (1)",
+      "instanceData": {
+        "instanceOf": "b92a7d5c-9ac4-4811-ba98-4b8c4ef8050c",
+        "deletions": {},
+        "children": {}
+      },
+      "parentId": "ff209124-cff5-4b18-8309-83a0d991789f",
+      "components": {
+        "79b2f1f2-a305-40b8-b071-57feebce494a": {
+          "id": "79b2f1f2-a305-40b8-b071-57feebce494a",
+          "name": "InformationController",
+          "parameters": {
+            "text": "OSO DE ANTEOJOS",
+            "popup": {
+              "type": "entity",
+              "id": "9221b768-f760-42c5-bb92-af79298cc59f"
+            },
+            "popupText": {
+              "type": "entity",
+              "id": "9221b768-f760-42c5-bb92-af79298cc59f/c1fdbc9e-26bf-4377-b7fd-310c4389c727"
+            }
+          }
+        }
+      },
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    "f5735a7b-6a31-436b-836e-1d8294e7865a": {
+      "id": "f5735a7b-6a31-436b-836e-1d8294e7865a",
+      "position": [
+        0.6262811700089297,
+        0,
+        0
+      ],
+      "name": "Information (2)",
+      "instanceData": {
+        "instanceOf": "b92a7d5c-9ac4-4811-ba98-4b8c4ef8050c",
+        "deletions": {},
+        "children": {}
+      },
+      "parentId": "adef287b-63d9-4913-bdd0-b0ecc8dd2a38",
+      "components": {
+        "79b2f1f2-a305-40b8-b071-57feebce494a": {
+          "id": "79b2f1f2-a305-40b8-b071-57feebce494a",
+          "name": "InformationController",
+          "parameters": {
+            "text": "OCELOTE ALBINA",
+            "popup": {
+              "type": "entity",
+              "id": "9221b768-f760-42c5-bb92-af79298cc59f"
+            },
+            "popupText": {
+              "type": "entity",
+              "id": "9221b768-f760-42c5-bb92-af79298cc59f/c1fdbc9e-26bf-4377-b7fd-310c4389c727"
+            }
+          }
+        }
+      },
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    "a02aa54f-9997-4dfe-a16e-62b0f2a2f7e7": {
+      "id": "a02aa54f-9997-4dfe-a16e-62b0f2a2f7e7",
+      "position": [
+        -0.67030323669257,
+        0,
+        0
+      ],
+      "name": "Information (3)",
+      "instanceData": {
+        "instanceOf": "b92a7d5c-9ac4-4811-ba98-4b8c4ef8050c",
+        "deletions": {},
+        "children": {}
+      },
+      "parentId": "8f3ddb5f-3f2f-4e91-a3ed-4442f943e7fe",
+      "components": {
+        "79b2f1f2-a305-40b8-b071-57feebce494a": {
+          "id": "79b2f1f2-a305-40b8-b071-57feebce494a",
+          "name": "InformationController",
+          "parameters": {
+            "popup": {
+              "type": "entity",
+              "id": "9221b768-f760-42c5-bb92-af79298cc59f"
+            },
+            "popupText": {
+              "type": "entity",
+              "id": "9221b768-f760-42c5-bb92-af79298cc59f/c1fdbc9e-26bf-4377-b7fd-310c4389c727"
+            },
+            "text": "GUACAMAYA"
+          }
+        }
+      },
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
     }
   },
   "spaces": {
