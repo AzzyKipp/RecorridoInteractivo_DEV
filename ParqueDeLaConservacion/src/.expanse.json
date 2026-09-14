@@ -461,6 +461,10 @@
             "instructionUi": {
               "type": "entity",
               "id": "655727b7-357c-464e-bc50-8de151dc31c5"
+            },
+            "debugUi": {
+              "type": "entity",
+              "id": "e8329a61-15ee-4da5-8e24-af2429a71b51"
             }
           }
         }
@@ -1891,6 +1895,39 @@
       },
       "name": "AnimalAudioManager",
       "order": 1.6135541683715708
+    },
+    "e8329a61-15ee-4da5-8e24-af2429a71b51": {
+      "id": "e8329a61-15ee-4da5-8e24-af2429a71b51",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {},
+      "ui": {
+        "width": 70,
+        "height": 10,
+        "text": "Sample Text",
+        "color": "#ffffff",
+        "fontSize": 12,
+        "type": "3d"
+      },
+      "name": "TextoDebug",
+      "order": 1.1974135958991776
     }
   },
   "spaces": {
