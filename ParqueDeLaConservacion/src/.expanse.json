@@ -697,16 +697,16 @@
       "name": "Plano",
       "order": 33.09240424989505,
       "videoControls": {
-        "paused": false,
+        "paused": true,
         "loop": false
       }
     },
     "26c37545-5b99-4e6d-835a-4e255b54180e": {
       "id": "26c37545-5b99-4e6d-835a-4e255b54180e",
       "position": [
-        0,
-        0,
-        0.017774225557513068
+        -0.04237648163710628,
+        0.09125314195250356,
+        0.2343736020218695
       ],
       "rotation": [
         0,
@@ -716,12 +716,12 @@
       ],
       "scale": [
         1,
-        1,
-        1
+        0.5,
+        0.5
       ],
       "geometry": null,
       "material": null,
-      "parentId": "e84f056b-7bef-4bb6-bad8-a6ce63db8edc",
+      "parentId": "34027fe7-11cc-47de-8080-18dd8a4b96b4",
       "components": {
         "aef797fb-74e1-42e6-8807-eab2db70ff6e": {
           "id": "aef797fb-74e1-42e6-8807-eab2db70ff6e",
@@ -757,10 +757,10 @@
         "image": null,
         "backgroundSize": "contain",
         "ignoreRaycast": false,
-        "stackingOrder": 1
+        "stackingOrder": 10
       },
       "name": "Botón",
-      "order": -0.44796147575196876
+      "order": 35.06304236407454
     },
     "f907d0e5-0c7e-45bf-af4d-43cb9c98632f": {
       "id": "f907d0e5-0c7e-45bf-af4d-43cb9c98632f",
