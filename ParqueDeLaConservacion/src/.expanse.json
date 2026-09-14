@@ -265,7 +265,7 @@
         "justifyContent": "center",
         "position": "absolute",
         "top": 216,
-        "left": 38,
+        "left": 31,
         "bottom": "",
         "right": ""
       },
@@ -310,7 +310,7 @@
         "top": 18,
         "left": "",
         "bottom": "",
-        "right": 50
+        "right": 41
       },
       "name": "CloseButton",
       "order": 5.147825894781773
