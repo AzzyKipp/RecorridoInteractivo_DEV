@@ -127,10 +127,52 @@
                 "b996e530-a4fd-4951-997b-69df4db2efc5": true
               }
             },
-            "components": {}
+            "components": {},
+            "ui": {
+              "type": "3d",
+              "width": 35,
+              "height": 35,
+              "background": "#446019",
+              "borderRadius": 18,
+              "flexDirection": "row",
+              "backgroundOpacity": 0.8199999999999998,
+              "padding": "10",
+              "gap": "6",
+              "alignItems": "flex-start",
+              "justifyContent": "flex-end",
+              "position": "absolute",
+              "top": 18,
+              "left": 350,
+              "bottom": "",
+              "right": 16
+            }
           },
           "c1fdbc9e-26bf-4377-b7fd-310c4389c727": {
             "deleted": true
+          },
+          "2c8d20a2-d48c-4ac8-a947-c2d8a6d9528e": {
+            "id": "2c8d20a2-d48c-4ac8-a947-c2d8a6d9528e",
+            "deletions": {},
+            "ui": {
+              "flexDirection": "row",
+              "width": 319,
+              "height": 259,
+              "type": "overlay",
+              "background": "#ffffff",
+              "backgroundOpacity": 1,
+              "image": {
+                "type": "asset",
+                "asset": "assets/Box.png"
+              },
+              "backgroundSize": "contain",
+              "alignItems": "center",
+              "justifyContent": "center",
+              "position": "absolute",
+              "top": 216,
+              "left": 40,
+              "bottom": "",
+              "right": ""
+            }
           }
         }
       },
@@ -461,10 +503,6 @@
             "instructionUi": {
               "type": "entity",
               "id": "655727b7-357c-464e-bc50-8de151dc31c5"
-            },
-            "debugUi": {
-              "type": "entity",
-              "id": "e8329a61-15ee-4da5-8e24-af2429a71b51"
             }
           }
         }
