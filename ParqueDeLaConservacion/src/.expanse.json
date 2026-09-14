@@ -427,7 +427,54 @@
           }
         }
       },
-      "components": {},
+      "components": {
+        "09cdf2ff-4767-4826-b18f-66154189eaa0": {
+          "id": "09cdf2ff-4767-4826-b18f-66154189eaa0",
+          "name": "zoo-surface-model-placer",
+          "parameters": {
+            "osoModel": {
+              "type": "entity",
+              "id": "f0f21955-7302-46df-a2a6-18bec5824c65"
+            },
+            "ocelotModel": {
+              "type": "entity",
+              "id": "100f59e5-fc16-4407-9e5c-52a03e35a612"
+            },
+            "guacamayaModel": {
+              "type": "entity",
+              "id": "d2c80a95-cd4e-43d2-905b-809d70fbb7ce"
+            },
+            "monoModel": {
+              "type": "entity",
+              "id": "731a341d-1c99-47ec-80f7-7d5882459be3"
+            },
+            "floorSurface": {
+              "type": "entity",
+              "id": "2403307b-7ebb-4742-b3eb-dc7362ffc368"
+            }
+          }
+        },
+        "ca3dff4c-fdfa-48ba-a184-00b3d3610329": {
+          "id": "ca3dff4c-fdfa-48ba-a184-00b3d3610329",
+          "name": "zoo-image-target-detector",
+          "parameters": {
+            "instructionUi": {
+              "type": "entity",
+              "id": "655727b7-357c-464e-bc50-8de151dc31c5"
+            }
+          }
+        },
+        "ec360df8-f926-4a0f-98be-ac57b82f158e": {
+          "id": "ec360df8-f926-4a0f-98be-ac57b82f158e",
+          "name": "SLAMTargetController",
+          "parameters": {
+            "camera": {
+              "type": "entity",
+              "id": "a608ddd9-9379-464d-966f-5d8d8674c83c"
+            }
+          }
+        }
+      },
       "geometry": null,
       "id": "a608ddd9-9379-464d-966f-5d8d8674c83c",
       "material": null,
@@ -1217,6 +1264,10 @@
             "ecosistema": {
               "type": "entity",
               "id": "d35cff39-edd6-4547-90f2-a15ee4c1a085"
+            },
+            "camera": {
+              "type": "entity",
+              "id": "a608ddd9-9379-464d-966f-5d8d8674c83c"
             }
           }
         }
@@ -1352,6 +1403,504 @@
         1,
         1
       ]
+    },
+    "31c99d0f-6a9e-458b-b349-8d2a8800e3da": {
+      "id": "31c99d0f-6a9e-458b-b349-8d2a8800e3da",
+      "position": [
+        -15.565552688012769,
+        0,
+        3.1696846137596655
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {},
+      "name": "Anteojos_Target",
+      "imageTarget": {
+        "name": "Anteojos_Target"
+      },
+      "order": 1.8603893700994565
+    },
+    "ae545707-807c-4316-9777-4f6922c3c71d": {
+      "id": "ae545707-807c-4316-9777-4f6922c3c71d",
+      "position": [
+        -10.951401144775328,
+        0,
+        3.155251613583362
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {},
+      "name": "Aullador_Target",
+      "imageTarget": {
+        "name": "Aullador_Target"
+      },
+      "order": 1.4804398575101017
+    },
+    "29d8c3b3-0421-4933-b87a-7fcdbcb20d1a": {
+      "id": "29d8c3b3-0421-4933-b87a-7fcdbcb20d1a",
+      "position": [
+        -12.459153963712957,
+        0,
+        3.2664370767938458
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {},
+      "name": "Guacamaya_Target",
+      "imageTarget": {
+        "name": "Guacamaya_Target"
+      },
+      "order": 1.3257198448576348
+    },
+    "750c2f87-8103-4a02-a78b-ee48ee5af1fd": {
+      "id": "750c2f87-8103-4a02-a78b-ee48ee5af1fd",
+      "position": [
+        -13.89930991151628,
+        0,
+        3.232272047167708
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {},
+      "name": "Ocelote_Target",
+      "imageTarget": {
+        "name": "Ocelote_Target"
+      },
+      "order": 1.163971956330696
+    },
+    "655727b7-357c-464e-bc50-8de151dc31c5": {
+      "id": "655727b7-357c-464e-bc50-8de151dc31c5",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {},
+      "ui": {
+        "width": 70,
+        "height": 10,
+        "text": "Sample Text",
+        "color": "#ffffff",
+        "fontSize": 12,
+        "type": "3d"
+      },
+      "name": "TextoSuperficie",
+      "order": 1.4438944375689644
+    },
+    "d2c80a95-cd4e-43d2-905b-809d70fbb7ce": {
+      "id": "d2c80a95-cd4e-43d2-905b-809d70fbb7ce",
+      "position": [
+        -22.13893786008363,
+        0,
+        12.972579742537315
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        0.2,
+        0.2,
+        0.2
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {},
+      "gltfModel": {
+        "src": {
+          "type": "asset",
+          "asset": "assets/GuacamayaEnEcosistema.glb"
+        },
+        "animationClip": "ParrotALL_CircleFly",
+        "loop": true
+      },
+      "name": "GuacamayaEnEcosistema.glb",
+      "order": 1.567141148720455
+    },
+    "731a341d-1c99-47ec-80f7-7d5882459be3": {
+      "id": "731a341d-1c99-47ec-80f7-7d5882459be3",
+      "position": [
+        -21.8505332396916,
+        0,
+        16.78144081378454
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {},
+      "gltfModel": {
+        "src": {
+          "type": "asset",
+          "asset": "assets/MonoEnEcosistema.glb"
+        },
+        "animationClip": "B1Idle",
+        "loop": true
+      },
+      "name": "MonoEnEcosistema.glb",
+      "order": 1.4363214809511682
+    },
+    "f0f21955-7302-46df-a2a6-18bec5824c65": {
+      "id": "f0f21955-7302-46df-a2a6-18bec5824c65",
+      "position": [
+        -20.757395227539007,
+        0,
+        21.040455436059588
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {},
+      "gltfModel": {
+        "src": {
+          "type": "asset",
+          "asset": "assets/OsoEnEcosistema.glb"
+        },
+        "animationClip": "idle",
+        "loop": true
+      },
+      "name": "OsoEnEcosistema.glb",
+      "order": 1.1721880844323271
+    },
+    "100f59e5-fc16-4407-9e5c-52a03e35a612": {
+      "id": "100f59e5-fc16-4407-9e5c-52a03e35a612",
+      "position": [
+        -20.17367402704238,
+        0,
+        25.22777483259499
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {},
+      "gltfModel": {
+        "src": {
+          "type": "asset",
+          "asset": "assets/OceloteEnEcosistema.glb"
+        },
+        "animationClip": "Take 001",
+        "loop": true
+      },
+      "name": "OceloteEnEcosistema.glb",
+      "order": 1.5678766888742819
+    },
+    "2403307b-7ebb-4742-b3eb-dc7362ffc368": {
+      "id": "2403307b-7ebb-4742-b3eb-dc7362ffc368",
+      "position": [
+        -6.274955757261289,
+        0,
+        25.273502500588425
+      ],
+      "rotation": [
+        -0.7071067999999991,
+        0,
+        0,
+        0.7071067623730954
+      ],
+      "scale": [
+        20,
+        20.00000106424963,
+        20.00000106424963
+      ],
+      "geometry": {
+        "type": "plane",
+        "width": 1,
+        "height": 1
+      },
+      "material": {
+        "type": "basic",
+        "color": "#FFFFFF",
+        "opacity": 0
+      },
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {},
+      "name": "PlanoSuperficie",
+      "order": 1.2401714704895053,
+      "shadow": {
+        "receiveShadow": true
+      },
+      "collider": {
+        "geometry": {
+          "type": "auto"
+        }
+      }
+    },
+    "7d453060-479d-4c80-bfea-146021b57526": {
+      "id": "7d453060-479d-4c80-bfea-146021b57526",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {},
+      "name": "OsoAudio",
+      "order": 1.5941523514732907,
+      "audio": {
+        "paused": true,
+        "loop": true,
+        "src": {
+          "type": "asset",
+          "asset": "assets/SonidoOso.mp3"
+        }
+      }
+    },
+    "7fa70f53-02fe-4876-9dc0-1169381a50d2": {
+      "id": "7fa70f53-02fe-4876-9dc0-1169381a50d2",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {},
+      "name": "OceloteAudio",
+      "order": 1.753564610394235,
+      "audio": {
+        "paused": true,
+        "loop": true,
+        "src": {
+          "type": "asset",
+          "asset": "assets/SonidoOcelote.mp3"
+        }
+      }
+    },
+    "f8568954-d31b-4494-a915-44182150ee87": {
+      "id": "f8568954-d31b-4494-a915-44182150ee87",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {},
+      "name": "MonoAudio",
+      "order": 1.5673564910769615,
+      "audio": {
+        "paused": true,
+        "loop": true,
+        "src": {
+          "type": "asset",
+          "asset": "assets/SonidoMono.mp3"
+        }
+      }
+    },
+    "4905dc14-ee39-4f1a-9f38-ee0e4287a437": {
+      "id": "4905dc14-ee39-4f1a-9f38-ee0e4287a437",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {},
+      "name": "GuacamayaAudio",
+      "order": 1.5646736211175485,
+      "audio": {
+        "loop": true,
+        "paused": true,
+        "src": {
+          "type": "asset",
+          "asset": "assets/SonidoGuacamaya.mp3"
+        }
+      }
+    },
+    "36414bf7-585b-44f4-8863-355214eaa0ae": {
+      "id": "36414bf7-585b-44f4-8863-355214eaa0ae",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {
+        "bf0cb10d-586d-47e4-9f8f-275585830f77": {
+          "id": "bf0cb10d-586d-47e4-9f8f-275585830f77",
+          "name": "zoo-animal-audio",
+          "parameters": {
+            "osoAudio": {
+              "type": "entity",
+              "id": "7d453060-479d-4c80-bfea-146021b57526"
+            },
+            "oceloteAudio": {
+              "type": "entity",
+              "id": "7fa70f53-02fe-4876-9dc0-1169381a50d2"
+            },
+            "guacamayaAudio": {
+              "type": "entity",
+              "id": "4905dc14-ee39-4f1a-9f38-ee0e4287a437"
+            },
+            "monoAudio": {
+              "type": "entity",
+              "id": "f8568954-d31b-4494-a915-44182150ee87"
+            }
+          }
+        }
+      },
+      "name": "AnimalAudioManager",
+      "order": 1.6135541683715708
     }
   },
   "spaces": {
