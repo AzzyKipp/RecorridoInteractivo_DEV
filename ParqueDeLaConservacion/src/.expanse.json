@@ -423,7 +423,7 @@
           "headset": "disabled",
           "phone": "AR",
           "world": {
-            "disableWorldTracking": true
+            "disableWorldTracking": false
           }
         }
       },
@@ -461,16 +461,6 @@
             "instructionUi": {
               "type": "entity",
               "id": "655727b7-357c-464e-bc50-8de151dc31c5"
-            }
-          }
-        },
-        "ec360df8-f926-4a0f-98be-ac57b82f158e": {
-          "id": "ec360df8-f926-4a0f-98be-ac57b82f158e",
-          "name": "SLAMTargetController",
-          "parameters": {
-            "camera": {
-              "type": "entity",
-              "id": "a608ddd9-9379-464d-966f-5d8d8674c83c"
             }
           }
         }

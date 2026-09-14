@@ -5,7 +5,6 @@ const EcosistemaUnlockController = ecs.registerComponent({
 
   schema: {
     ecosistema: ecs.eid,
-    camera: ecs.eid,
   },
 
   stateMachine: ({world, eid, schemaAttribute}) => {
