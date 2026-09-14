@@ -127,52 +127,14 @@
                 "b996e530-a4fd-4951-997b-69df4db2efc5": true
               }
             },
-            "components": {},
-            "ui": {
-              "type": "3d",
-              "width": 35,
-              "height": 35,
-              "background": "#446019",
-              "borderRadius": 18,
-              "flexDirection": "row",
-              "backgroundOpacity": 0.8199999999999998,
-              "padding": "10",
-              "gap": "6",
-              "alignItems": "flex-start",
-              "justifyContent": "flex-end",
-              "position": "absolute",
-              "top": 18,
-              "left": 350,
-              "bottom": "",
-              "right": 16
-            }
+            "components": {}
           },
           "c1fdbc9e-26bf-4377-b7fd-310c4389c727": {
             "deleted": true
           },
           "2c8d20a2-d48c-4ac8-a947-c2d8a6d9528e": {
             "id": "2c8d20a2-d48c-4ac8-a947-c2d8a6d9528e",
-            "deletions": {},
-            "ui": {
-              "flexDirection": "row",
-              "width": 319,
-              "height": 259,
-              "type": "overlay",
-              "background": "#ffffff",
-              "backgroundOpacity": 1,
-              "image": {
-                "type": "asset",
-                "asset": "assets/Box.png"
-              },
-              "backgroundSize": "contain",
-              "alignItems": "center",
-              "justifyContent": "center",
-              "position": "absolute",
-              "top": 216,
-              "left": 40,
-              "bottom": "",
-              "right": ""
-            }
+            "deletions": {}
           }
         }
       },
@@ -303,7 +265,7 @@
         "justifyContent": "center",
         "position": "absolute",
         "top": 216,
-        "left": 43,
+        "left": 38,
         "bottom": "",
         "right": ""
       },
@@ -348,7 +310,7 @@
         "top": 18,
         "left": "",
         "bottom": "",
-        "right": 16
+        "right": 50
       },
       "name": "CloseButton",
       "order": 5.147825894781773
@@ -1965,7 +1927,8 @@
         "type": "3d"
       },
       "name": "TextoDebug",
-      "order": 1.1974135958991776
+      "order": 1.1974135958991776,
+      "disabled": true
     }
   },
   "spaces": {
