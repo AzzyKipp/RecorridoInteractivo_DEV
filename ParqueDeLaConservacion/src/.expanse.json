@@ -38,7 +38,7 @@
               "type": "entity",
               "id": "9221b768-f760-42c5-bb92-af79298cc59f/c1fdbc9e-26bf-4377-b7fd-310c4389c727"
             },
-            "text": "Los monos aulladores ayudan a dispersar semillas y controlar las poblaciones de plantas, lo que influye en la regeneración forestal. "
+            "text": "Los monos aulladores ayudan a dispersar semillas y controlar las poblaciones de plantas, lo que influye en la regeneración forestal. Son una de las especies de primates más traficadas en América Latina. \n\n Los monitos bebés dependen de su madre para subsistir, pues se alimentan de leche materna y viven aferrados a ellas durante sus primeros meses de vida. Cuando son traficados, los cazadores suelen matar a sus madres para llevarse a sus crías. \n\n Al crecer, desarrollan comportamientos naturales de defensa, y quienes los capturan ejercen violencia física arrancando sus dientes para evitar que muerdan.  "
           }
         }
       },
@@ -780,10 +780,10 @@
         3.476027668205562
       ],
       "rotation": [
+        -0.7071067811865475,
         0,
         0,
-        0,
-        1
+        0.7071067811865476
       ],
       "scale": [
         1,
@@ -836,10 +836,10 @@
         2.20612141227547
       ],
       "rotation": [
+        -0.7071067811865475,
         0,
         0,
-        0,
-        1
+        0.7071067811865476
       ],
       "scale": [
         1,
@@ -1286,7 +1286,7 @@
           "id": "79b2f1f2-a305-40b8-b071-57feebce494a",
           "name": "InformationController",
           "parameters": {
-            "text": "OCELOTE ALBINA",
+            "text": "La ocelote albina del Parque de la Conservación es probablemente la única en el mundo. En la naturaleza, cuando una cría está en desventaja, los padres suelen abandonarla. Los animales albinos muchas veces son ciegos y esta es una gran desventaja.\n\nLos animales albinos son considerablemente más buscados, perseguidos y cotizados en las redes de tráfico ilegal, pero afortunadamente la ocelote albina fue encontrada en Amalfi, Antioquia (había sido confundida con un gato) y fue entregada oportunamente a las autoridades.",
             "popup": {
               "type": "entity",
               "id": "9221b768-f760-42c5-bb92-af79298cc59f"
