@@ -38,7 +38,7 @@
               "type": "entity",
               "id": "9221b768-f760-42c5-bb92-af79298cc59f/c1fdbc9e-26bf-4377-b7fd-310c4389c727"
             },
-            "text": "MONO AULLADOR"
+            "text": "Los monos aulladores ayudan a dispersar semillas y controlar las poblaciones de plantas, lo que influye en la regeneración forestal. "
           }
         }
       },
@@ -69,14 +69,7 @@
           "id": "79b2f1f2-a305-40b8-b071-57feebce494a",
           "name": "InformationController",
           "parameters": {
-            "popup": {
-              "type": "entity",
-              "id": ""
-            },
-            "popupText": {
-              "type": "entity",
-              "id": ""
-            }
+            "text": ""
           }
         }
       },
@@ -172,7 +165,12 @@
             "closeButton": {
               "type": "entity",
               "id": "3c0e9c53-12c0-4053-8ff5-21fd7dab7231"
-            }
+            },
+            "popupText": {
+              "type": "entity",
+              "id": "c1fdbc9e-26bf-4377-b7fd-310c4389c727"
+            },
+            "text": "Hoal"
           }
         }
       },
@@ -374,7 +372,7 @@
       "ui": {
         "width": 288,
         "height": 201,
-        "text": "Sample Text",
+        "text": "¡Bienvenid@ a esta experiencia! Ubica en el mapa que encontrarás por todo el parque y en la primera página de tu álbum los lugares donde deberás escanear los infogramas animales.\n\nDesbloquearás una experiencia única y podrás reclamar láminas para pegar en tu álbum. \n\nCuando consigas tus láminas, vuelve a esta página a través del QR y escanea cada lámina, verás que al coleccionarlas todas tendrás la oportunidad de ver el ecosistema vivo.\n\n¡Disfruta el recorrido y recuerda: la fauna silvestre no es una mercancía. El tráfico animal es ilegal!",
         "color": "#ffffff",
         "fontSize": 12,
         "type": "3d",
@@ -382,7 +380,8 @@
         "font": {
           "type": "font",
           "font": "assets/Fuentes/Poppins/Poppins-Regular.json"
-        }
+        },
+        "verticalTextAlign": "center"
       },
       "name": "PopupText",
       "order": 1.0529250286656695
@@ -778,13 +777,13 @@
       "position": [
         0.9814925064761473,
         0,
-        2.2010977768278304
+        3.476027668205562
       ],
       "rotation": [
-        -0.7071067811865475,
         0,
         0,
-        0.7071067811865476
+        0,
+        1
       ],
       "scale": [
         1,
@@ -834,7 +833,7 @@
       "position": [
         -0.6584449274814341,
         0,
-        3.5172300068871114
+        2.20612141227547
       ],
       "rotation": [
         0,
@@ -1244,7 +1243,7 @@
           "id": "79b2f1f2-a305-40b8-b071-57feebce494a",
           "name": "InformationController",
           "parameters": {
-            "text": "OSO DE ANTEOJOS",
+            "text": "Al proteger a los osos de anteojos, se resguardan grandes extensiones de páramos y bosques de niebla que benefician a cientos de otras especies y aseguran fuentes de agua.\n\nLa osa de anteojos que se encuentra en el  parque de la conservación fue encontrada en un patio amarrada, se descubrió que la alimentaban con cuido de perro, sabiendo que los osos de anteojos necesitan de una dieta basada en frutos silvestres, necesitando entre 4 y 15 kilos de comida al día. ",
             "popup": {
               "type": "entity",
               "id": "9221b768-f760-42c5-bb92-af79298cc59f"
@@ -1271,7 +1270,7 @@
     "f5735a7b-6a31-436b-836e-1d8294e7865a": {
       "id": "f5735a7b-6a31-436b-836e-1d8294e7865a",
       "position": [
-        0.6262811700089297,
+        -0.6467888707578882,
         0,
         0
       ],
@@ -1314,7 +1313,7 @@
     "a02aa54f-9997-4dfe-a16e-62b0f2a2f7e7": {
       "id": "a02aa54f-9997-4dfe-a16e-62b0f2a2f7e7",
       "position": [
-        -0.67030323669257,
+        0.6564428869919156,
         0,
         0
       ],
@@ -1338,7 +1337,7 @@
               "type": "entity",
               "id": "9221b768-f760-42c5-bb92-af79298cc59f/c1fdbc9e-26bf-4377-b7fd-310c4389c727"
             },
-            "text": "GUACAMAYA"
+            "text": "Las guacamayas son fundamentales para la dispersión de semillas, ya que ayudan a regenerar los bosques y a mantener la biodiversidad tropical.\n\n Son una especie muy traficada debido a los colores llamativos de su plumaje. \n\nAl ser traficadas, cortan sus alas para que no puedan volar y escaparse, perdiendo la capacidad de buscar alimento, trasladarse grandes distancias en la selva, localizar a su pareja o grupo y mantener su salud física activa."
           }
         }
       },

@@ -8,6 +8,7 @@ schema: {
   popupText: ecs.eid,
   text: ecs.string,
 },
+
   stateMachine: ({world, eid, schemaAttribute}) => {
     ecs.defineState('default')
       .initial()
