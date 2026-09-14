@@ -45,11 +45,11 @@
           "parameters": {
             "instructionUi": {
               "type": "entity",
-              "id": "1313e56e-67ab-4167-97c8-f637688023a0"
+              "id": "9a23baec-6128-4586-bef0-d595fc51f59f"
             },
-            "debugUi": {
+            "instructionFrame": {
               "type": "entity",
-              "id": "f67a6dea-325f-482d-ab6c-e97948f00249"
+              "id": "5ebf389a-37c6-4712-bb37-be093c903d48"
             }
           }
         },
@@ -86,7 +86,7 @@
       "name": "Camera",
       "position": [
         0,
-        2,
+        2.8307280046323537,
         7.35069522473803
       ],
       "rotation": [
@@ -174,43 +174,6 @@
           "height": 1
         }
       }
-    },
-    "1313e56e-67ab-4167-97c8-f637688023a0": {
-      "id": "1313e56e-67ab-4167-97c8-f637688023a0",
-      "position": [
-        0,
-        1.5653387522838305,
-        -1.4985878629259337
-      ],
-      "rotation": [
-        0,
-        0,
-        0,
-        1
-      ],
-      "scale": [
-        1,
-        1,
-        1
-      ],
-      "geometry": null,
-      "material": null,
-      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
-      "components": {},
-      "ui": {
-        "width": 150,
-        "height": 10,
-        "text": "a",
-        "color": "#ffffff",
-        "fontSize": 12,
-        "type": "overlay",
-        "font": {
-          "type": "font",
-          "font": "Futura"
-        }
-      },
-      "name": "TextoSuperficie",
-      "order": 5.365553055559231
     },
     "ec975291-4ce9-478e-a312-89cc433931d5": {
       "id": "ec975291-4ce9-478e-a312-89cc433931d5",
@@ -351,7 +314,7 @@
           "type": "asset",
           "asset": "assets/GLBS/GuacamayaEnEcosistema.glb"
         },
-        "animationClip": "",
+        "animationClip": "ParrotALL_CircleFly",
         "loop": true
       },
       "name": "GuacamayaEnEcosistema.glb",
@@ -384,7 +347,7 @@
           "type": "asset",
           "asset": "assets/GLBS/OceloteEnEcosistema.glb"
         },
-        "animationClip": "",
+        "animationClip": "Take 001",
         "loop": true
       },
       "name": "OceloteEnEcosistema.glb",
@@ -417,7 +380,7 @@
           "type": "asset",
           "asset": "assets/GLBS/OsoEnEcosistema.glb"
         },
-        "animationClip": "",
+        "animationClip": "idle",
         "loop": true
       },
       "name": "OsoEnEcosistema.glb",
@@ -450,7 +413,7 @@
           "type": "asset",
           "asset": "assets/GLBS/MonoEnEcosistema.glb"
         },
-        "animationClip": "",
+        "animationClip": "B1Idle",
         "loop": true
       },
       "name": "MonoEnEcosistema.glb",
@@ -667,7 +630,8 @@
         "type": "overlay"
       },
       "name": "TextoDebug",
-      "order": 29.51662732056228
+      "order": 29.51662732056228,
+      "hidden": false
     },
     "34027fe7-11cc-47de-8080-18dd8a4b96b4": {
       "id": "34027fe7-11cc-47de-8080-18dd8a4b96b4",
@@ -701,14 +665,14 @@
       "id": "e84f056b-7bef-4bb6-bad8-a6ce63db8edc",
       "position": [
         -0.04237648163710628,
-        0.22170854070939372,
-        0.742614239560266
+        0.09125314195250356,
+        0.17665604269012666
       ],
       "rotation": [
-        0.7071067811865475,
         0,
         0,
-        0.7071067811865476
+        0,
+        1
       ],
       "scale": [
         1,
@@ -731,9 +695,9 @@
       "parentId": "34027fe7-11cc-47de-8080-18dd8a4b96b4",
       "components": {},
       "name": "Plano",
-      "order": 32.03340636874921,
+      "order": 33.09240424989505,
       "videoControls": {
-        "paused": true,
+        "paused": false,
         "loop": false
       }
     },
@@ -742,7 +706,7 @@
       "position": [
         0,
         0,
-        0
+        0.017774225557513068
       ],
       "rotation": [
         0,
@@ -781,7 +745,7 @@
       "ui": {
         "type": "3d",
         "width": 100,
-        "height": 50,
+        "height": 100,
         "background": "#000000",
         "borderRadius": 18,
         "flexDirection": "row",
@@ -792,10 +756,11 @@
         "justifyContent": "center",
         "image": null,
         "backgroundSize": "contain",
-        "ignoreRaycast": false
+        "ignoreRaycast": false,
+        "stackingOrder": 1
       },
       "name": "Botón",
-      "order": 1.4535373476332376
+      "order": -0.44796147575196876
     },
     "f907d0e5-0c7e-45bf-af4d-43cb9c98632f": {
       "id": "f907d0e5-0c7e-45bf-af4d-43cb9c98632f",
@@ -878,6 +843,123 @@
         "ignoreRaycast": true
       },
       "order": 2.1676613363547648
+    },
+    "c80c4928-54b4-4fbb-9f2b-3a7fbd8a48ab": {
+      "id": "c80c4928-54b4-4fbb-9f2b-3a7fbd8a48ab",
+      "position": [
+        0,
+        1.095863175756843,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {},
+      "ui": {
+        "width": 412,
+        "height": 784,
+        "type": "overlay",
+        "ignoreRaycast": false
+      },
+      "name": "MarcodeTexto",
+      "order": 31.792250853236602,
+      "hidden": false
+    },
+    "9a23baec-6128-4586-bef0-d595fc51f59f": {
+      "id": "9a23baec-6128-4586-bef0-d595fc51f59f",
+      "position": [
+        -2.220446049250313e-16,
+        1.2902125448033783,
+        -2.220446049250313e-16
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "5ebf389a-37c6-4712-bb37-be093c903d48",
+      "components": {},
+      "ui": {
+        "width": 174,
+        "height": 80,
+        "text": "Alejate un poco del infograma y apunta la camara hacia el piso para descubrir al animal en su habitat libre",
+        "color": "#ffffff",
+        "fontSize": 15,
+        "type": "overlay",
+        "font": {
+          "type": "font",
+          "font": "Futura"
+        },
+        "position": "absolute",
+        "top": 8,
+        "left": 6,
+        "bottom": "",
+        "right": ""
+      },
+      "name": "TextoSuperficie",
+      "order": 32.219745780208626,
+      "hidden": false
+    },
+    "5ebf389a-37c6-4712-bb37-be093c903d48": {
+      "id": "5ebf389a-37c6-4712-bb37-be093c903d48",
+      "position": [
+        0,
+        -1.095863175756843,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "c80c4928-54b4-4fbb-9f2b-3a7fbd8a48ab",
+      "components": {},
+      "ui": {
+        "width": 187,
+        "height": 100,
+        "type": "3d",
+        "background": "#066a12",
+        "backgroundOpacity": 1,
+        "position": "absolute",
+        "top": 555,
+        "left": 104,
+        "bottom": "",
+        "right": "",
+        "ignoreRaycast": true,
+        "image": null,
+        "backgroundSize": "contain",
+        "borderRadius": 8
+      },
+      "name": "Marco",
+      "order": 29.80207223311248,
+      "hidden": false
     }
   },
   "spaces": {
