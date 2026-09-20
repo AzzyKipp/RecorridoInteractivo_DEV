@@ -82,6 +82,9 @@ ecs.registerComponent({
     dataAttribute,
   }) => {
 
+    let cameraStarted = false
+    let fadeTimer: ReturnType<typeof setTimeout> | null = null
+
     // ==================================================
     // OBTENER MODELO SEGÚN ANIMAL
     // ==================================================
@@ -483,7 +486,7 @@ ecs.registerComponent({
             if (!intersection) {
 
               console.log(
-                '[surface] El tap no intersectó ' +
+                '[surface] El tap no intersecto ' +
                 'con el plano del piso.'
               )
 
@@ -503,7 +506,7 @@ ecs.registerComponent({
             if (distance <= 0) {
 
               console.log(
-                '[surface] Punto inválido'
+                '[surface] Punto invalido'
               )
 
               return
