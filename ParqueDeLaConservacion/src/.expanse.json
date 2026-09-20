@@ -1,0 +1,973 @@
+{
+  "objects": {
+    "47699d9e-18a5-4f88-a4f9-b8be92e8f74a": {
+      "components": {},
+      "geometry": null,
+      "id": "47699d9e-18a5-4f88-a4f9-b8be92e8f74a",
+      "light": {
+        "type": "ambient"
+      },
+      "material": null,
+      "name": "Ambient Light",
+      "position": [
+        10,
+        5,
+        5
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "order": 0.4038940050501252
+    },
+    "a608ddd9-9379-464d-966f-5d8d8674c83c": {
+      "camera": {
+        "type": "perspective",
+        "xr": {
+          "desktop": "disabled",
+          "xrCameraType": "world",
+          "headset": "disabled",
+          "phone": "AR"
+        }
+      },
+      "components": {
+        "87dd0bc5-b266-47b3-9a37-a5c565e6ca78": {
+          "id": "87dd0bc5-b266-47b3-9a37-a5c565e6ca78",
+          "name": "zoo-image-target-detector",
+          "parameters": {
+            "instructionUi": {
+              "type": "entity",
+              "id": "9a23baec-6128-4586-bef0-d595fc51f59f"
+            },
+            "instructionFrame": {
+              "type": "entity",
+              "id": "5ebf389a-37c6-4712-bb37-be093c903d48"
+            }
+          }
+        },
+        "1a80e881-3da5-4e9f-8e65-98ef409c8a83": {
+          "id": "1a80e881-3da5-4e9f-8e65-98ef409c8a83",
+          "name": "zoo-surface-model-placer",
+          "parameters": {
+            "osoModel": {
+              "type": "entity",
+              "id": "c0df5f64-feb0-4678-a702-39c18953282e"
+            },
+            "ocelotModel": {
+              "type": "entity",
+              "id": "20113faf-d0dc-41fa-8bd9-bde915478545"
+            },
+            "guacamayaModel": {
+              "type": "entity",
+              "id": "eb61477f-7d05-4b57-ad75-1c4decf4282e"
+            },
+            "monoModel": {
+              "type": "entity",
+              "id": "95a7291e-973d-4f25-9071-5154821d9d5a"
+            },
+            "floorSurface": {
+              "type": "entity",
+              "id": "70c770cc-cb65-4c45-8385-1028644b76d5"
+            }
+          }
+        }
+      },
+      "geometry": null,
+      "id": "a608ddd9-9379-464d-966f-5d8d8674c83c",
+      "material": null,
+      "name": "Camera",
+      "position": [
+        0,
+        2.8307280046323537,
+        7.35069522473803
+      ],
+      "rotation": [
+        0.00044368872331410124,
+        0.9659425615285845,
+        -0.25875089860082223,
+        0.0016563336561801576
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "order": 1.0308214152219775
+    },
+    "ac1989e3-3b71-49e2-a05f-e682aeb18c36": {
+      "components": {},
+      "geometry": null,
+      "id": "ac1989e3-3b71-49e2-a05f-e682aeb18c36",
+      "light": {
+        "intensity": 1,
+        "type": "directional"
+      },
+      "material": null,
+      "name": "Directional Light",
+      "position": [
+        20,
+        50,
+        10
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "order": 0.6644431107322474
+    },
+    "70c770cc-cb65-4c45-8385-1028644b76d5": {
+      "id": "70c770cc-cb65-4c45-8385-1028644b76d5",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        -0.7071067999999991,
+        0,
+        0,
+        0.7071067623730954
+      ],
+      "scale": [
+        20,
+        20,
+        20
+      ],
+      "geometry": {
+        "type": "plane",
+        "width": 1,
+        "height": 1
+      },
+      "material": {
+        "type": "basic",
+        "color": "#FFFFFF",
+        "opacity": 0
+      },
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {},
+      "name": "PlanoSuperficie",
+      "order": 2.9878497758332436,
+      "shadow": {
+        "receiveShadow": true
+      },
+      "collider": {
+        "geometry": {
+          "type": "plane",
+          "width": 1,
+          "height": 1
+        }
+      }
+    },
+    "ec975291-4ce9-478e-a312-89cc433931d5": {
+      "id": "ec975291-4ce9-478e-a312-89cc433931d5",
+      "position": [
+        -6.180881276570341,
+        1.6520668918323183,
+        -1.78126073271821
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {},
+      "name": "Anteojos_Target",
+      "imageTarget": {
+        "name": "Anteojos_Target"
+      },
+      "order": 8.5314051255713
+    },
+    "a1f3658a-a631-4193-8611-8ae01260925a": {
+      "id": "a1f3658a-a631-4193-8611-8ae01260925a",
+      "position": [
+        4.726058021859204,
+        1.925422825222379,
+        -1.826428542536875
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {},
+      "name": "Guacamaya_Target",
+      "imageTarget": {
+        "name": "Guacamaya_Target"
+      },
+      "order": 10.481201645652215
+    },
+    "ea99679f-28b1-4f23-a49e-5b49bc62754e": {
+      "id": "ea99679f-28b1-4f23-a49e-5b49bc62754e",
+      "position": [
+        -2.4429053716292124,
+        1.6994999481432012,
+        -1.8012382675655965
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {},
+      "name": "Ocelote_Target",
+      "imageTarget": {
+        "name": "Ocelote_Target"
+      },
+      "order": 11.84352015152868
+    },
+    "5664037a-55de-452b-bbcb-87104ebdbd1f": {
+      "id": "5664037a-55de-452b-bbcb-87104ebdbd1f",
+      "position": [
+        0.9876398132116866,
+        1.7445901347537562,
+        -1.8218256333824197
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {},
+      "name": "Aullador_Target",
+      "imageTarget": {
+        "name": "Aullador_Target"
+      },
+      "order": 13.21359993536672
+    },
+    "eb61477f-7d05-4b57-ad75-1c4decf4282e": {
+      "id": "eb61477f-7d05-4b57-ad75-1c4decf4282e",
+      "position": [
+        5.404604609923869,
+        0,
+        2.4592238428276962
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        0.2,
+        0.2,
+        0.2
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {},
+      "gltfModel": {
+        "src": {
+          "type": "asset",
+          "asset": "assets/GLBS/GuacamayaEnEcosistema.glb"
+        },
+        "animationClip": "ParrotALL_CircleFly",
+        "loop": true
+      },
+      "name": "GuacamayaEnEcosistema.glb",
+      "order": 15.18971846994269
+    },
+    "20113faf-d0dc-41fa-8bd9-bde915478545": {
+      "id": "20113faf-d0dc-41fa-8bd9-bde915478545",
+      "position": [
+        -2.2130559609728913,
+        0,
+        1.7888521261506645
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        0.2,
+        0.2,
+        0.2
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {},
+      "gltfModel": {
+        "src": {
+          "type": "asset",
+          "asset": "assets/GLBS/OceloteEnEcosistema.glb"
+        },
+        "animationClip": "Take 001",
+        "loop": true
+      },
+      "name": "OceloteEnEcosistema.glb",
+      "order": 17.039752017644116
+    },
+    "c0df5f64-feb0-4678-a702-39c18953282e": {
+      "id": "c0df5f64-feb0-4678-a702-39c18953282e",
+      "position": [
+        -6.5739609832208785,
+        0,
+        1.5951820987540657
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        0.2,
+        0.2,
+        0.2
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {},
+      "gltfModel": {
+        "src": {
+          "type": "asset",
+          "asset": "assets/GLBS/OsoEnEcosistema.glb"
+        },
+        "animationClip": "idle",
+        "loop": true
+      },
+      "name": "OsoEnEcosistema.glb",
+      "order": 18.93125781133408
+    },
+    "95a7291e-973d-4f25-9071-5154821d9d5a": {
+      "id": "95a7291e-973d-4f25-9071-5154821d9d5a",
+      "position": [
+        1.5518940102473624,
+        0,
+        1.9000400340611043
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        0.2,
+        0.2,
+        0.2
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {},
+      "gltfModel": {
+        "src": {
+          "type": "asset",
+          "asset": "assets/GLBS/MonoEnEcosistema.glb"
+        },
+        "animationClip": "B1Idle",
+        "loop": true
+      },
+      "name": "MonoEnEcosistema.glb",
+      "order": 20.44457739007302
+    },
+    "355b4dc8-9084-4f89-8e67-f5f93c5662a7": {
+      "id": "355b4dc8-9084-4f89-8e67-f5f93c5662a7",
+      "position": [
+        -6.742667907678701,
+        0,
+        1.6157892862912346
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {},
+      "name": "OsoAudio",
+      "order": 21.915689458804586,
+      "audio": {
+        "loop": true,
+        "paused": true,
+        "src": {
+          "type": "asset",
+          "asset": "assets/Sonidos/SonidoOso.mp3"
+        }
+      }
+    },
+    "74f9681a-f0d2-4535-89af-760cd71c3b7e": {
+      "id": "74f9681a-f0d2-4535-89af-760cd71c3b7e",
+      "position": [
+        6.2126364026782515,
+        0,
+        1.6103540116153106
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {},
+      "name": "GuacamayaAudio",
+      "order": 23.456250980316867,
+      "audio": {
+        "paused": true,
+        "loop": true,
+        "src": {
+          "type": "asset",
+          "asset": "assets/Sonidos/SonidoGuacamaya.mp3"
+        }
+      }
+    },
+    "3d4f08ef-55f6-4b97-b4e3-892ca5eb3b14": {
+      "id": "3d4f08ef-55f6-4b97-b4e3-892ca5eb3b14",
+      "position": [
+        -2.4366399848468125,
+        0,
+        1.750133433025436
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {},
+      "name": "OceloteAudio",
+      "order": 25.042511843968434,
+      "audio": {
+        "loop": true,
+        "paused": true,
+        "src": {
+          "type": "asset",
+          "asset": "assets/Sonidos/SonidoOcelote.mp3"
+        }
+      }
+    },
+    "6a897629-92ac-4031-9e97-4f8c79027bc1": {
+      "id": "6a897629-92ac-4031-9e97-4f8c79027bc1",
+      "position": [
+        1.8937077604258352,
+        0,
+        2.054582728471434
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {},
+      "name": "MonoAudio",
+      "order": 26.761624156631026,
+      "audio": {
+        "paused": true,
+        "loop": true,
+        "src": {
+          "type": "asset",
+          "asset": "assets/Sonidos/SonidoMono.mp3"
+        }
+      }
+    },
+    "aacecc92-6b49-4b1c-9698-eaf43e27977d": {
+      "id": "aacecc92-6b49-4b1c-9698-eaf43e27977d",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {
+        "584bd8ed-78b7-4bad-aff3-ba0d7e55df04": {
+          "id": "584bd8ed-78b7-4bad-aff3-ba0d7e55df04",
+          "name": "zoo-animal-audio",
+          "parameters": {
+            "osoAudio": {
+              "type": "entity",
+              "id": "355b4dc8-9084-4f89-8e67-f5f93c5662a7"
+            },
+            "oceloteAudio": {
+              "type": "entity",
+              "id": "3d4f08ef-55f6-4b97-b4e3-892ca5eb3b14"
+            },
+            "guacamayaAudio": {
+              "type": "entity",
+              "id": "74f9681a-f0d2-4535-89af-760cd71c3b7e"
+            },
+            "monoAudio": {
+              "type": "entity",
+              "id": "6a897629-92ac-4031-9e97-4f8c79027bc1"
+            }
+          }
+        }
+      },
+      "name": "AnimalAudioManager",
+      "order": 28.001712684864366
+    },
+    "f67a6dea-325f-482d-ab6c-e97948f00249": {
+      "id": "f67a6dea-325f-482d-ab6c-e97948f00249",
+      "position": [
+        -0.4134583580622373,
+        1.7421389894799124,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {},
+      "ui": {
+        "width": 70,
+        "height": 10,
+        "text": "Sample Text",
+        "color": "#ffffff",
+        "fontSize": 12,
+        "type": "overlay"
+      },
+      "name": "TextoDebug",
+      "order": 29.51662732056228,
+      "hidden": false
+    },
+    "34027fe7-11cc-47de-8080-18dd8a4b96b4": {
+      "id": "34027fe7-11cc-47de-8080-18dd8a4b96b4",
+      "position": [
+        0,
+        0,
+        3.410207358691995
+      ],
+      "rotation": [
+        -0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "scale": [
+        2,
+        2,
+        2
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {},
+      "name": "VideoImagen",
+      "imageTarget": {
+        "name": "VideoImagen"
+      },
+      "order": 30.6147108700169
+    },
+    "e84f056b-7bef-4bb6-bad8-a6ce63db8edc": {
+      "id": "e84f056b-7bef-4bb6-bad8-a6ce63db8edc",
+      "position": [
+        -0.04237648163710628,
+        0.09125314195250356,
+        0.17665604269012666
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        0.5,
+        0.5
+      ],
+      "geometry": {
+        "type": "plane",
+        "width": 1,
+        "height": 1
+      },
+      "material": {
+        "type": "basic",
+        "color": "#FFFFFF",
+        "textureSrc": {
+          "type": "asset",
+          "asset": "assets/VideoIntroductorioVR_.mp4"
+        }
+      },
+      "parentId": "34027fe7-11cc-47de-8080-18dd8a4b96b4",
+      "components": {},
+      "name": "Plano",
+      "order": 33.09240424989505,
+      "videoControls": {
+        "paused": true,
+        "loop": false
+      }
+    },
+    "26c37545-5b99-4e6d-835a-4e255b54180e": {
+      "id": "26c37545-5b99-4e6d-835a-4e255b54180e",
+      "position": [
+        -0.04237648163710628,
+        0.09125314195250356,
+        0.2343736020218695
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        0.5,
+        0.5
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "34027fe7-11cc-47de-8080-18dd8a4b96b4",
+      "components": {
+        "aef797fb-74e1-42e6-8807-eab2db70ff6e": {
+          "id": "aef797fb-74e1-42e6-8807-eab2db70ff6e",
+          "name": "Pause Video",
+          "parameters": {
+            "videoEntity": {
+              "type": "entity",
+              "id": "e84f056b-7bef-4bb6-bad8-a6ce63db8edc"
+            },
+            "pauseIcon": {
+              "type": "entity",
+              "id": "f907d0e5-0c7e-45bf-af4d-43cb9c98632f"
+            },
+            "playIcon": {
+              "type": "entity",
+              "id": "27d1a1da-f0a6-44a0-9dc7-7533e4c2bb03"
+            }
+          }
+        }
+      },
+      "ui": {
+        "type": "3d",
+        "width": 100,
+        "height": 100,
+        "background": "#000000",
+        "borderRadius": 18,
+        "flexDirection": "row",
+        "backgroundOpacity": 0,
+        "padding": "10",
+        "gap": "6",
+        "alignItems": "center",
+        "justifyContent": "center",
+        "image": null,
+        "backgroundSize": "contain",
+        "ignoreRaycast": false,
+        "stackingOrder": 10
+      },
+      "name": "Botón",
+      "order": 35.06304236407454
+    },
+    "f907d0e5-0c7e-45bf-af4d-43cb9c98632f": {
+      "id": "f907d0e5-0c7e-45bf-af4d-43cb9c98632f",
+      "position": [
+        -0.323,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "26c37545-5b99-4e6d-835a-4e255b54180e",
+      "components": {},
+      "name": "IconoPausa",
+      "ui": {
+        "width": 16,
+        "height": 16,
+        "image": {
+          "type": "asset",
+          "asset": "assets/PauseIcon.png"
+        },
+        "backgroundOpacity": 1,
+        "backgroundSize": "contain",
+        "position": "absolute",
+        "top": "",
+        "left": "",
+        "bottom": "",
+        "right": "",
+        "ignoreRaycast": true
+      },
+      "order": 0.4921792227060399
+    },
+    "27d1a1da-f0a6-44a0-9dc7-7533e4c2bb03": {
+      "id": "27d1a1da-f0a6-44a0-9dc7-7533e4c2bb03",
+      "position": [
+        -0.323,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "26c37545-5b99-4e6d-835a-4e255b54180e",
+      "components": {},
+      "name": "IconoPlay",
+      "ui": {
+        "width": 16,
+        "height": 16,
+        "image": {
+          "type": "asset",
+          "asset": "assets/PlayIcon.png"
+        },
+        "backgroundOpacity": 1,
+        "backgroundSize": "contain",
+        "position": "absolute",
+        "top": "",
+        "left": "",
+        "bottom": "",
+        "right": "",
+        "ignoreRaycast": true
+      },
+      "order": 2.1676613363547648
+    },
+    "c80c4928-54b4-4fbb-9f2b-3a7fbd8a48ab": {
+      "id": "c80c4928-54b4-4fbb-9f2b-3a7fbd8a48ab",
+      "position": [
+        0,
+        1.095863175756843,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {},
+      "ui": {
+        "width": 412,
+        "height": 784,
+        "type": "overlay",
+        "ignoreRaycast": false
+      },
+      "name": "MarcodeTexto",
+      "order": 31.792250853236602,
+      "hidden": false
+    },
+    "9a23baec-6128-4586-bef0-d595fc51f59f": {
+      "id": "9a23baec-6128-4586-bef0-d595fc51f59f",
+      "position": [
+        -2.220446049250313e-16,
+        1.2902125448033783,
+        -2.220446049250313e-16
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "5ebf389a-37c6-4712-bb37-be093c903d48",
+      "components": {},
+      "ui": {
+        "width": 174,
+        "height": 80,
+        "text": "Alejate un poco del infograma y apunta la camara hacia el piso para descubrir al animal en su habitat libre",
+        "color": "#ffffff",
+        "fontSize": 15,
+        "type": "overlay",
+        "font": {
+          "type": "font",
+          "font": "Futura"
+        },
+        "position": "absolute",
+        "top": 8,
+        "left": 6,
+        "bottom": "",
+        "right": ""
+      },
+      "name": "TextoSuperficie",
+      "order": 32.219745780208626,
+      "hidden": false
+    },
+    "5ebf389a-37c6-4712-bb37-be093c903d48": {
+      "id": "5ebf389a-37c6-4712-bb37-be093c903d48",
+      "position": [
+        0,
+        -1.095863175756843,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "c80c4928-54b4-4fbb-9f2b-3a7fbd8a48ab",
+      "components": {},
+      "ui": {
+        "width": 187,
+        "height": 100,
+        "type": "3d",
+        "background": "#066a12",
+        "backgroundOpacity": 1,
+        "position": "absolute",
+        "top": 555,
+        "left": 104,
+        "bottom": "",
+        "right": "",
+        "ignoreRaycast": true,
+        "image": null,
+        "backgroundSize": "contain",
+        "borderRadius": 8
+      },
+      "name": "Marco",
+      "order": 29.80207223311248,
+      "hidden": false
+    }
+  },
+  "spaces": {
+    "88453035-dc0f-486d-868a-8ff7c2fda864": {
+      "id": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "name": "Default Space",
+      "activeCamera": "a608ddd9-9379-464d-966f-5d8d8674c83c"
+    }
+  },
+  "entrySpaceId": "88453035-dc0f-486d-868a-8ff7c2fda864"
+}
