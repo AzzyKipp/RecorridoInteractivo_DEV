@@ -1,38 +1,10 @@
-/**
- * zoo-image-target-detector.ts
- *
- * DEBUG VISUAL
- *
- * Este componente:
- *
- * 1. Detecta Image Targets.
- * 2. Identifica el animal.
- * 3. Muestra la instrucción al usuario.
- * 4. Envía zoo:animalDetected.
- * 5. Muestra visualmente hasta dónde llegó el código.
- * 6. Escucha zoo:modelPlaced.
- *
- * IMPORTANTE:
- * Este componente NO hace raycast.
- */
-
 import * as ecs from '@8thwall/ecs'
 
+type AnimalKey = 'oso' | 'ocelote' | 'guacamaya' | 'mono'
 
-// ============================================================
-// 1. TIPOS
-// ============================================================
-
-type AnimalKey =
-  | 'oso'
-  | 'ocelote'
-  | 'guacamaya'
-  | 'mono'
-
-
-// ============================================================
-// 2. IMAGE TARGET → ANIMAL
-// ============================================================
+// --------------------------------------------------
+// MAPEO DE IMAGE TARGETS
+// --------------------------------------------------
 
 const ANIMAL_BY_IMAGE_NAME: Record<string, AnimalKey> = {
   Anteojos_Target: 'oso',
@@ -41,58 +13,39 @@ const ANIMAL_BY_IMAGE_NAME: Record<string, AnimalKey> = {
   Aullador_Target: 'mono',
 }
 
-
-// ============================================================
-// 3. MENSAJE PRINCIPAL
-// ============================================================
-
-const INSTRUCTION_MESSAGE =
-  'Alejate un poco del infograma y apunta la camara hacia el piso para descubrir al animal en su habitat libre'
-
-
-// ============================================================
-// 4. EVENTOS
-// ============================================================
+// --------------------------------------------------
+// EVENTOS PERSONALIZADOS
+// --------------------------------------------------
 
 export const ANIMAL_DETECTED_EVENT = 'zoo:animalDetected'
-
-export const ANIMAL_LOST_EVENT = 'zoo:animalLost'
-
 export const MODEL_PLACED_EVENT = 'zoo:modelPlaced'
+export const FLOOR_STATUS_EVENT = 'zoo:floorStatus'
 
-
-// ============================================================
-// 5. REGISTRO
-// ============================================================
+// --------------------------------------------------
+// COMPONENTE
+// --------------------------------------------------
 
 ecs.registerComponent({
-
   name: 'zoo-image-target-detector',
 
   schema: {
-
-    /**
-     * UI que verá el usuario.
-     */
+    // UI principal del usuario
     instructionUi: ecs.eid,
 
-    /**
-     * UI temporal para diagnóstico.
-     */
+    // Panel temporal de debug
     debugUi: ecs.eid,
-
   },
 
   data: {
-
+    // Animal seleccionado actualmente
     pendingAnimal: ecs.string,
 
+    // ¿El sistema ya encontró una superficie válida?
+    floorReady: ecs.boolean,
+
+    // ¿Ya se colocó el modelo?
+    modelPlaced: ecs.boolean,
   },
-
-
-  // ==========================================================
-  // STATE MACHINE
-  // ==========================================================
 
   stateMachine: ({
     world,
@@ -101,493 +54,338 @@ ecs.registerComponent({
     dataAttribute,
   }) => {
 
+    // --------------------------------------------------
+    // ACTUALIZAR TEXTO DEL USUARIO
+    // --------------------------------------------------
 
-    // ========================================================
-    // TRIGGERS
-    // ========================================================
+    const updateInstruction = (text: string) => {
+      const {instructionUi} = schemaAttribute.get(eid)
 
-    const imageFound = ecs.defineTrigger()
+      if (!instructionUi) {
+        return
+      }
 
-    const hideText = ecs.defineTrigger()
+      ecs.Ui.mutate(world, instructionUi, (ui) => {
+        ui.text = text
+        ui.display = 'flex'
+        return false
+      })
+    }
 
+    // --------------------------------------------------
+    // OCULTAR TEXTO
+    // --------------------------------------------------
 
-    // ========================================================
-    // FUNCIÓN DE DEBUG VISUAL
-    // ========================================================
-    //
-    // Esta función escribe directamente en la pantalla.
-    //
-    // NO depende de console.log().
-    //
-    // ========================================================
+    const hideInstruction = () => {
+      const {instructionUi} = schemaAttribute.get(eid)
 
-    const updateDebug = (
-      message: string,
-      status: 'INFO' | 'OK' | 'WAIT' | 'ERROR' = 'INFO'
-    ) => {
+      if (!instructionUi) {
+        return
+      }
 
-      const {debugUi} =
-        schemaAttribute.get(eid)
+      ecs.Ui.mutate(world, instructionUi, (ui) => {
+        ui.display = 'none'
+        return false
+      })
+    }
 
+    // --------------------------------------------------
+    // DEBUG
+    // --------------------------------------------------
+
+    const updateDebug = (text: string) => {
+      const {debugUi} = schemaAttribute.get(eid)
 
       if (!debugUi) {
         return
       }
 
-
-      let icon = '🔵'
-
-
-      if (status === 'OK') {
-        icon = '🟢'
-      }
-
-      if (status === 'WAIT') {
-        icon = '🟡'
-      }
-
-      if (status === 'ERROR') {
-        icon = '🔴'
-      }
-
-
-      const debugText =
-        `DEBUG AR\n\n${icon} ${message}`
-
-
-      ecs.Ui.mutate(
-        world,
-        debugUi,
-        (cursor) => {
-
-          cursor.text = debugText
-
-          cursor.display = 'flex'
-
-          return false
-        }
-      )
+      ecs.Ui.mutate(world, debugUi, (ui) => {
+        ui.text = text
+        ui.display = 'flex'
+        return false
+      })
     }
 
+    // --------------------------------------------------
+    // ACTUALIZAR EL MENSAJE SEGÚN EL ESTADO
+    // --------------------------------------------------
 
-    // ========================================================
-    // FUNCIÓN PARA MOSTRAR / OCULTAR INSTRUCCIÓN
-    // ========================================================
+    const refreshInstruction = () => {
+      const {
+        pendingAnimal,
+        floorReady,
+        modelPlaced,
+      } = dataAttribute.get(eid)
 
-    const showInstruction = (
-      visible: boolean
-    ) => {
+      // -------------------------------
+      // MODELO YA COLOCADO
+      // -------------------------------
 
-      const {instructionUi} =
-        schemaAttribute.get(eid)
+      if (modelPlaced) {
+        hideInstruction()
+        return
+      }
 
+      // -------------------------------
+      // NO HAY ANIMAL SELECCIONADO
+      // -------------------------------
 
-      updateDebug(
-        visible
-          ? 'Intentando mostrar instrucción...'
-          : 'Ocultando instrucción.',
-        visible
-          ? 'WAIT'
-          : 'INFO'
-      )
+      if (!pendingAnimal) {
 
+        if (floorReady) {
 
-      // ------------------------------------------------------
-      // Verificar entidad
-      // ------------------------------------------------------
+          updateInstruction(
+            'Piso detectado ✓\n\nEscanea un infograma para descubrir un animal 🐾'
+          )
 
-      if (!instructionUi) {
+        } else {
 
-        updateDebug(
-          'ERROR: instructionUi no está enlazado.',
-          'ERROR'
+          updateInstruction(
+            'Escanea un infograma y mueve la cámara para detectar el piso.'
+          )
+        }
+
+        return
+      }
+
+      // -------------------------------
+      // HAY ANIMAL PERO NO PISO
+      // -------------------------------
+
+      if (!floorReady) {
+
+        updateInstruction(
+          'Infograma detectado ✓\n\nApunta la cámara hacia el piso para detectar una superficie.'
         )
 
         return
       }
 
+      // -------------------------------
+      // TENEMOS ANIMAL + PISO
+      // -------------------------------
 
-      // ------------------------------------------------------
-      // Modificar UI
-      // ------------------------------------------------------
-
-      ecs.Ui.mutate(
-        world,
-        instructionUi,
-        (cursor) => {
-
-          cursor.text =
-            INSTRUCTION_MESSAGE
-
-          cursor.display =
-            visible
-              ? 'flex'
-              : 'none'
-
-          return false
-        }
+      updateInstruction(
+        '¡Todo listo! 👆\n\nTAP TO PLACE'
       )
-
-
-      // ------------------------------------------------------
-      // Confirmación visual
-      // ------------------------------------------------------
-
-      if (visible) {
-
-        updateDebug(
-          'Instrucción visible correctamente.',
-          'OK'
-        )
-
-      } else {
-
-        updateDebug(
-          'Instrucción oculta.',
-          'INFO'
-        )
-
-      }
-
     }
 
+    // --------------------------------------------------
+    // ESTADO INICIAL
+    // --------------------------------------------------
 
-    // ========================================================
-    // ESTADO 1
-    //
-    // ESPERANDO IMAGE TARGET
-    // ========================================================
-
-    ecs.defineState('waitingForTarget')
-
+    ecs.defineState('waiting')
       .initial()
 
-
-      // ------------------------------------------------------
-      // ENTRADA AL ESTADO
-      // ------------------------------------------------------
-
       .onEnter(() => {
 
+        dataAttribute.cursor(eid).pendingAnimal = ''
+        dataAttribute.cursor(eid).floorReady = false
+        dataAttribute.cursor(eid).modelPlaced = false
+
         updateDebug(
-          'Detector iniciado. Esperando Image Target...',
-          'WAIT'
+          'INICIANDO AR...\n\n' +
+          'TARGET: esperando\n' +
+          'ANIMAL: ninguno\n' +
+          'FLOOR: buscando...'
         )
 
-
-        showInstruction(false)
-
+        refreshInstruction()
       })
 
-
-      // ======================================================
-      // IMAGE TARGET FOUND
-      // ======================================================
+      // ------------------------------------------------
+      // IMAGE TARGET ENCONTRADO
+      // ------------------------------------------------
 
       .listen(
         world.events.globalId,
         ecs.events.REALITY_IMAGE_FOUND,
         (event: {data: unknown}) => {
 
+          const data = event.data as {
+            name?: string
+          }
 
-          // --------------------------------------------------
-          // PASO 1
-          // --------------------------------------------------
+          const targetName = data.name ?? ''
 
-          updateDebug(
-            'Image Target detectado.',
-            'OK'
+          console.log(
+            '[detector] IMAGE FOUND:',
+            targetName
           )
 
+          const animal =
+            ANIMAL_BY_IMAGE_NAME[targetName]
 
-          const data =
-            event.data as {
-              name?: string
-            }
-
-
-          // --------------------------------------------------
-          // PASO 2
-          // --------------------------------------------------
-
-          if (!data.name) {
+          // Target desconocido
+          if (!animal) {
 
             updateDebug(
-              'ERROR: Image Target sin nombre.',
-              'ERROR'
+              'TARGET DETECTADO\n\n' +
+              targetName +
+              '\n\n⚠️ NO ESTÁ EN EL MAPEO'
             )
 
             return
           }
 
+          // Guardar animal
+          dataAttribute.cursor(eid).pendingAnimal =
+            animal
 
-          updateDebug(
-            `Target detectado: ${data.name}`,
-            'OK'
+          dataAttribute.cursor(eid).modelPlaced =
+            false
+
+          // Avisar al placer
+          world.events.dispatch(
+            world.events.globalId,
+            ANIMAL_DETECTED_EVENT,
+            {
+              animal,
+              targetName,
+            }
           )
 
-
-          // --------------------------------------------------
-          // PASO 3
-          // --------------------------------------------------
-
-          const animal =
-            ANIMAL_BY_IMAGE_NAME[data.name]
-
-
-          if (!animal) {
-
-            updateDebug(
-              `ERROR: target "${data.name}" no está en el mapeo.`,
-              'ERROR'
+          updateDebug(
+            'TARGET DETECTADO ✓\n\n' +
+            'Target: ' +
+            targetName +
+            '\n' +
+            'Animal: ' +
+            animal +
+            '\n\n' +
+            'FLOOR: ' +
+            (
+              dataAttribute.get(eid).floorReady
+                ? 'READY ✓'
+                : 'BUSCANDO...'
             )
-
-            return
-          }
-
-
-          // --------------------------------------------------
-          // PASO 4
-          // --------------------------------------------------
-
-          updateDebug(
-            `Animal reconocido: ${animal}`,
-            'OK'
           )
 
-
-          // --------------------------------------------------
-          // PASO 5
-          // --------------------------------------------------
-
-          dataAttribute.cursor(eid).pendingAnimal =
-            animal
-
-
-          // --------------------------------------------------
-          // PASO 6
-          // --------------------------------------------------
-
-          world.events.dispatch(
-            world.events.globalId,
-            ANIMAL_DETECTED_EVENT,
-            {
-              animal,
-            }
-          )
-
-
-          updateDebug(
-            'Evento zoo:animalDetected enviado.',
-            'OK'
-          )
-
-
-          // --------------------------------------------------
-          // PASO 7
-          // --------------------------------------------------
-
-          imageFound.trigger()
-
+          refreshInstruction()
         }
       )
 
-
-      // ------------------------------------------------------
-      // TRANSICIÓN
-      // ------------------------------------------------------
-
-      .onTrigger(
-        imageFound,
-        'showingInstruction'
-      )
-
-
-    // ========================================================
-    // ESTADO 2
-    //
-    // IMAGE TARGET DETECTADO
-    // ========================================================
-
-    ecs.defineState('showingInstruction')
-
-
-      // ------------------------------------------------------
-      // ENTRADA
-      // ------------------------------------------------------
-
-      .onEnter(() => {
-
-        updateDebug(
-          'Entró a showingInstruction.',
-          'OK'
-        )
-
-
-        showInstruction(true)
-
-
-        updateDebug(
-          'Esperando detección de superficie...',
-          'WAIT'
-        )
-
-      })
-
-
-      // ======================================================
-      // OTRO IMAGE TARGET
-      // ======================================================
-
-      .listen(
-        world.events.globalId,
-        ecs.events.REALITY_IMAGE_FOUND,
-        (event: {data: unknown}) => {
-
-          const data =
-            event.data as {
-              name?: string
-            }
-
-
-          if (!data.name) {
-            return
-          }
-
-
-          const animal =
-            ANIMAL_BY_IMAGE_NAME[data.name]
-
-
-          if (!animal) {
-            return
-          }
-
-
-          dataAttribute.cursor(eid).pendingAnimal =
-            animal
-
-
-          world.events.dispatch(
-            world.events.globalId,
-            ANIMAL_DETECTED_EVENT,
-            {
-              animal,
-            }
-          )
-
-
-          updateDebug(
-            `Nuevo animal detectado: ${animal}`,
-            'OK'
-          )
-
-        }
-      )
-
-
-      // ======================================================
-      // IMAGE TARGET LOST
-      // ======================================================
+      // ------------------------------------------------
+      // IMPORTANTE:
+      // IMAGE LOST NO CANCELA NADA
+      // ------------------------------------------------
 
       .listen(
         world.events.globalId,
         ecs.events.REALITY_IMAGE_LOST,
         (event: {data: unknown}) => {
 
-          const data =
-            event.data as {
-              name?: string
-            }
+          const data = event.data as {
+            name?: string
+          }
 
+          const targetName = data.name ?? ''
 
-          if (!data.name) {
+          const animal =
+            ANIMAL_BY_IMAGE_NAME[targetName]
+
+          if (!animal) {
             return
           }
 
+          const currentAnimal =
+            dataAttribute.get(eid).pendingAnimal
 
-          const lostAnimal =
-            ANIMAL_BY_IMAGE_NAME[data.name]
-
-
-          const current =
-            dataAttribute.get(eid)
-
-
-          // --------------------------------------------------
-          // Solo reaccionamos si es el animal pendiente.
-          // --------------------------------------------------
-
-          if (
-            lostAnimal !==
-            current.pendingAnimal
-          ) {
-
+          // Si no es nuestro target actual,
+          // simplemente ignoramos.
+          if (animal !== currentAnimal) {
             return
           }
 
-
-          // --------------------------------------------------
-          // DEBUG
-          // --------------------------------------------------
+          console.log(
+            '[detector] IMAGE LOST:',
+            targetName,
+            'pero el animal permanece seleccionado.'
+          )
 
           updateDebug(
-            `Image Target perdido: ${data.name}`,
-            'WAIT'
+            'TARGET PERDIDO\n\n' +
+            'Target: ' +
+            targetName +
+            '\n' +
+            'Animal seleccionado: ' +
+            animal +
+            '\n\n' +
+            'El World Tracking CONTINÚA.'
           )
 
-
-          // --------------------------------------------------
-          // AVISAR AL COMPONENTE DE SUPERFICIE
-          // --------------------------------------------------
-
-          world.events.dispatch(
-            world.events.globalId,
-            ANIMAL_LOST_EVENT,
-            {}
-          )
-
-
-          // --------------------------------------------------
-          // OCULTAR
-          // --------------------------------------------------
-
-          hideText.trigger()
-
+          // 🚨 NO HACEMOS:
+          // pendingAnimal = ''
+          // floorReady = false
+          // cancelled.trigger()
+          //
+          // El animal se conserva.
         }
       )
 
+      // ------------------------------------------------
+      // CAMBIO DEL ESTADO DEL PISO
+      // ------------------------------------------------
 
-      // ======================================================
+      .listen(
+        world.events.globalId,
+        FLOOR_STATUS_EVENT,
+        (event: {data: unknown}) => {
+
+          const data = event.data as {
+            ready?: boolean
+            tracking?: string
+          }
+
+          const ready = data.ready === true
+
+          dataAttribute.cursor(eid).floorReady =
+            ready
+
+          const animal =
+            dataAttribute.get(eid).pendingAnimal
+
+          updateDebug(
+            'AR STATUS\n\n' +
+            'Animal: ' +
+            (animal || 'ninguno') +
+            '\n' +
+            'World Tracking: ' +
+            (data.tracking || '---') +
+            '\n' +
+            'Floor: ' +
+            (ready ? 'READY ✓' : 'BUSCANDO...')
+          )
+
+          refreshInstruction()
+        }
+      )
+
+      // ------------------------------------------------
       // MODELO COLOCADO
-      // ======================================================
+      // ------------------------------------------------
 
       .listen(
         world.events.globalId,
         MODEL_PLACED_EVENT,
-        () => {
+        (event: {data: unknown}) => {
+
+          const data = event.data as {
+            animal?: string
+          }
+
+          dataAttribute.cursor(eid).modelPlaced =
+            true
 
           updateDebug(
-            'MODELO COLOCADO. Flujo completo.',
-            'OK'
+            'MODELO COLOCADO ✓\n\n' +
+            'Animal: ' +
+            (data.animal || '---')
           )
 
-
-          hideText.trigger()
-
+          hideInstruction()
         }
       )
-
-
-      // ======================================================
-      // VOLVER A ESPERAR
-      // ======================================================
-
-      .onTrigger(
-        hideText,
-        'waitingForTarget'
-      )
-
   },
-
 })

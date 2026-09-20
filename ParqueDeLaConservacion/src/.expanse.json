@@ -50,6 +50,10 @@
             "instructionFrame": {
               "type": "entity",
               "id": "5ebf389a-37c6-4712-bb37-be093c903d48"
+            },
+            "debugUi": {
+              "type": "entity",
+              "id": "f67a6dea-325f-482d-ab6c-e97948f00249"
             }
           }
         },
