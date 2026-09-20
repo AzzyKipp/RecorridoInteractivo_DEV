@@ -8,23 +8,25 @@ ecs.registerComponent({
   name: 'zoo-surface-model-placer',
 
   schema: {
-
-    // --------------------------------------------------
+    // -----------------------------------------
     // MODELOS
-    // --------------------------------------------------
+    // -----------------------------------------
 
     osoModel: ecs.eid,
     ocelotModel: ecs.eid,
     guacamayaModel: ecs.eid,
     monoModel: ecs.eid,
 
-    // --------------------------------------------------
+    // -----------------------------------------
     // SUPERFICIE
-    // --------------------------------------------------
+    // -----------------------------------------
 
     floorSurface: ecs.eid,
 
-    // Distancia máxima del raycast
+    // -----------------------------------------
+    // DISTANCIA DEL RAYCAST
+    // -----------------------------------------
+
     maxRaycastDistance: ecs.f32,
   },
 
@@ -33,8 +35,7 @@ ecs.registerComponent({
   },
 
   data: {
-
-    // Animal elegido por el Image Target
+    // Animal seleccionado por Image Target
     pendingAnimal: ecs.string,
 
     // Modelo actualmente colocado
@@ -43,20 +44,20 @@ ecs.registerComponent({
     // Estado del World Tracking
     trackingReady: ecs.boolean,
 
-    // ¿Tenemos superficie disponible?
+    // Piso detectado
     floorReady: ecs.boolean,
   },
 
-  // --------------------------------------------------
+  // ==================================================
   // ADD
-  // --------------------------------------------------
+  // ==================================================
 
   add: (world, component) => {
 
     const s =
       component.schemaAttribute.get(component.eid)
 
-    // Ocultar todos los modelos
+    // Ocultar modelos al comenzar
     ;[
       s.osoModel,
       s.ocelotModel,
@@ -70,9 +71,9 @@ ecs.registerComponent({
     })
   },
 
-  // --------------------------------------------------
+  // ==================================================
   // STATE MACHINE
-  // --------------------------------------------------
+  // ==================================================
 
   stateMachine: ({
     world,
@@ -81,9 +82,9 @@ ecs.registerComponent({
     dataAttribute,
   }) => {
 
-    // --------------------------------------------------
-    // OBTENER MODELO
-    // --------------------------------------------------
+    // ==================================================
+    // OBTENER MODELO SEGÚN ANIMAL
+    // ==================================================
 
     const getModelForAnimal =
       (animal: string): bigint => {
@@ -110,20 +111,21 @@ ecs.registerComponent({
         return 0n
       }
 
-    // --------------------------------------------------
+    // ==================================================
     // OCULTAR MODELO
-    // --------------------------------------------------
+    // ==================================================
 
-    const hideModel = (modelEid: bigint) => {
+    const hideModel =
+      (modelEid: bigint) => {
 
-      if (modelEid) {
-        ecs.Hidden.set(world, modelEid)
+        if (modelEid) {
+          ecs.Hidden.set(world, modelEid)
+        }
       }
-    }
 
-    // --------------------------------------------------
+    // ==================================================
     // WORLD TRACKING
-    // --------------------------------------------------
+    // ==================================================
 
     world.events.addListener(
       world.events.globalId,
@@ -141,15 +143,15 @@ ecs.registerComponent({
           ready
 
         console.log(
-          '[surface] World Tracking:',
+          '[surface] WORLD TRACKING:',
           data.status
         )
       }
     )
 
-    // --------------------------------------------------
-    // IMAGE TARGET ENCONTRADO
-    // --------------------------------------------------
+    // ==================================================
+    // IMAGE TARGET → SELECCIONAR ANIMAL
+    // ==================================================
 
     world.events.addListener(
       world.events.globalId,
@@ -160,22 +162,24 @@ ecs.registerComponent({
           animal?: string
         }
 
-        const animal = data.animal ?? ''
+        const animal =
+          data.animal ?? ''
 
         if (!animal) {
           return
         }
 
+        console.log(
+          '[surface] ANIMAL SELECCIONADO:',
+          animal
+        )
+
         const current =
           dataAttribute.get(eid)
 
-        // Si había un modelo anterior,
-        // lo ocultamos.
+        // Ocultar modelo anterior
         if (current.placedModel) {
-
-          hideModel(
-            current.placedModel
-          )
+          hideModel(current.placedModel)
         }
 
         const cursor =
@@ -186,17 +190,12 @@ ecs.registerComponent({
 
         cursor.placedModel =
           0n
-
-        console.log(
-          '[surface] Animal seleccionado:',
-          animal
-        )
       }
     )
 
-    // --------------------------------------------------
-    // BÚSQUEDA CONTINUA DE SUPERFICIE
-    // --------------------------------------------------
+    // ==================================================
+    // DETECCIÓN CONTINUA DEL PISO
+    // ==================================================
 
     ecs.defineState('trackingFloor')
       .initial()
@@ -210,7 +209,7 @@ ecs.registerComponent({
           schemaAttribute.get(eid)
 
         // ----------------------------------------------
-        // Todavía no tenemos World Tracking estable
+        // WORLD TRACKING TODAVÍA NO ESTÁ LISTO
         // ----------------------------------------------
 
         if (!current.trackingReady) {
@@ -234,7 +233,7 @@ ecs.registerComponent({
         }
 
         // ----------------------------------------------
-        // Cámara
+        // CÁMARA
         // ----------------------------------------------
 
         const cameraEid =
@@ -245,7 +244,7 @@ ecs.registerComponent({
         }
 
         // ----------------------------------------------
-        // Floor Surface
+        // FLOOR SURFACE
         // ----------------------------------------------
 
         if (!s.floorSurface) {
@@ -253,7 +252,7 @@ ecs.registerComponent({
         }
 
         // ----------------------------------------------
-        // RAYCAST HACIA ADELANTE
+        // RAYCAST PARA SABER SI HAY PISO
         // ----------------------------------------------
 
         const hits =
@@ -263,7 +262,6 @@ ecs.registerComponent({
             s.maxRaycastDistance || 8
           )
 
-        // Buscar específicamente nuestro Floor Surface
         const floorHit =
           hits.find(
             (hit) =>
@@ -274,7 +272,7 @@ ecs.registerComponent({
           !!floorHit
 
         // ----------------------------------------------
-        // CAMBIO DE ESTADO DEL PISO
+        // CAMBIO DEL ESTADO
         // ----------------------------------------------
 
         if (
@@ -285,6 +283,13 @@ ecs.registerComponent({
           dataAttribute.cursor(eid).floorReady =
             found
 
+          console.log(
+            '[surface] FLOOR:',
+            found
+              ? 'READY ✓'
+              : 'NOT FOUND'
+          )
+
           world.events.dispatch(
             world.events.globalId,
             FLOOR_STATUS_EVENT,
@@ -293,149 +298,320 @@ ecs.registerComponent({
               tracking: 'NORMAL',
             }
           )
-
-          console.log(
-            '[surface] Floor:',
-            found ? 'READY ✓' : 'NOT FOUND'
-          )
         }
       })
 
-      // ------------------------------------------------
-      // TAP PARA COLOCAR
-      // ------------------------------------------------
+      // ==================================================
+      // TAP NATIVO SOBRE EL CANVAS
+      // ==================================================
 
-      .listen(
-        world.events.globalId,
-        ecs.input.SCREEN_TOUCH_START,
-        (event: {data: unknown}) => {
+      .onEnter(() => {
 
-          const current =
-            dataAttribute.get(eid)
+        const {
+          renderer,
+          activeCamera,
+        } = world.three
 
-          // --------------------------------------------
-          // Necesitamos las dos cosas
-          // --------------------------------------------
+        const canvas =
+          renderer.domElement
 
-          if (!current.pendingAnimal) {
-            return
-          }
+        // ----------------------------------------------
+        // FUNCIÓN DEL TAP
+        // ----------------------------------------------
 
-          if (!current.floorReady) {
-            return
-          }
+        const handleTouch =
+          (event: TouchEvent) => {
 
-          if (current.placedModel) {
-            return
-          }
+            const current =
+              dataAttribute.get(eid)
 
-          // --------------------------------------------
-          // DATOS DEL TAP
-          // --------------------------------------------
+            // ------------------------------------------
+            // DEBUG
+            // ------------------------------------------
 
-          const data = event.data as {
-
-            worldPosition?: {
-              x: number
-              y: number
-              z: number
-            }
-
-            target?: bigint
-          }
-
-          const tapPosition =
-            data.worldPosition
-
-          // --------------------------------------------
-          // Si Studio no nos dio worldPosition
-          // --------------------------------------------
-
-          if (!tapPosition) {
-
-            console.warn(
-              '[surface] ⚠️ El tap no tiene worldPosition.'
+            console.log(
+              '[surface]  TOUCH DETECTADO'
             )
 
-            return
-          }
+            // ------------------------------------------
+            // ¿TENEMOS ANIMAL?
+            // ------------------------------------------
 
-          console.log(
-            '[surface] TAP:',
-            tapPosition
-          )
+            if (!current.pendingAnimal) {
 
-          // --------------------------------------------
-          // OBTENER MODELO
-          // --------------------------------------------
+              console.log(
+                '[surface]  TOUCH IGNORADO: ' +
+                'no hay animal'
+              )
 
-          const modelEid =
-            getModelForAnimal(
+              return
+            }
+
+            // ------------------------------------------
+            // ¿TENEMOS PISO?
+            // ------------------------------------------
+
+            if (!current.floorReady) {
+
+              console.log(
+                '[surface]  TOUCH IGNORADO: ' +
+                'no hay piso'
+              )
+
+              return
+            }
+
+            // ------------------------------------------
+            // ¿YA HAY MODELO?
+            // ------------------------------------------
+
+            if (current.placedModel) {
+
+              console.log(
+                '[surface] TOUCH IGNORADO: ' +
+                'modelo ya colocado'
+              )
+
+              return
+            }
+
+            // ------------------------------------------
+            // PRIMER TOUCH
+            // ------------------------------------------
+
+            const touch =
+              event.touches[0]
+
+            if (!touch) {
+              return
+            }
+
+            // ------------------------------------------
+            // RECT DEL CANVAS
+            // ------------------------------------------
+
+            const rect =
+              canvas.getBoundingClientRect()
+
+            // ------------------------------------------
+            // NORMALIZED DEVICE COORDINATES
+            // ------------------------------------------
+
+            const x =
+              ((touch.clientX - rect.left) /
+                rect.width) * 2 - 1
+
+            const y =
+              -(
+                (touch.clientY - rect.top) /
+                rect.height
+              ) * 2 + 1
+
+            console.log(
+              '[surface] TOUCH NDC:',
+              x,
+              y
+            )
+
+            // ------------------------------------------
+            // THREE
+            // ------------------------------------------
+
+            const THREE =
+              (window as any).THREE
+
+            if (!THREE) {
+
+              console.error(
+                '[surface]  THREE no disponible'
+              )
+
+              return
+            }
+
+            // ------------------------------------------
+            // RAYCASTER
+            // ------------------------------------------
+
+            const raycaster =
+              new THREE.Raycaster()
+
+            const mouse =
+              new THREE.Vector2(
+                x,
+                y
+              )
+
+            // ------------------------------------------
+            // ACTUALIZAR CÁMARA
+            // ------------------------------------------
+
+            activeCamera.updateMatrixWorld()
+
+            raycaster.setFromCamera(
+              mouse,
+              activeCamera
+            )
+
+            // ------------------------------------------
+            // INTERSECCIÓN CON EL PISO Y = 0
+            // ------------------------------------------
+
+            const floorPlane =
+              new THREE.Plane(
+                new THREE.Vector3(
+                  0,
+                  1,
+                  0
+                ),
+                0
+              )
+
+            const hitPoint =
+              new THREE.Vector3()
+
+            const intersection =
+              raycaster.ray.intersectPlane(
+                floorPlane,
+                hitPoint
+              )
+
+            // ------------------------------------------
+            // NO INTERSECCIÓN
+            // ------------------------------------------
+
+            if (!intersection) {
+
+              console.log(
+                '[surface] El tap no intersectó ' +
+                'con el plano del piso.'
+              )
+
+              return
+            }
+
+            // ------------------------------------------
+            // ASEGURAR QUE EL PUNTO ESTÉ DELANTE
+            // DE LA CÁMARA
+            // ------------------------------------------
+
+            const distance =
+              raycaster.ray.origin.distanceTo(
+                hitPoint
+              )
+
+            if (distance <= 0) {
+
+              console.log(
+                '[surface] Punto inválido'
+              )
+
+              return
+            }
+
+            console.log(
+              '[surface]  TAP POSITION:',
+              hitPoint.x,
+              hitPoint.y,
+              hitPoint.z
+            )
+
+            // ------------------------------------------
+            // MODELO
+            // ------------------------------------------
+
+            const modelEid =
+              getModelForAnimal(
+                current.pendingAnimal
+              )
+
+            if (!modelEid) {
+
+              console.error(
+                '[surface] No existe modelo para:',
+                current.pendingAnimal
+              )
+
+              return
+            }
+
+            // ------------------------------------------
+            // COLOCAR
+            // ------------------------------------------
+
+            world.setPosition(
+              modelEid,
+              hitPoint.x,
+              hitPoint.y,
+              hitPoint.z
+            )
+
+            // ------------------------------------------
+            // MOSTRAR
+            // ------------------------------------------
+
+            ecs.Hidden.remove(
+              world,
+              modelEid
+            )
+
+            // ------------------------------------------
+            // GUARDAR
+            // ------------------------------------------
+
+            dataAttribute.cursor(eid).placedModel =
+              modelEid
+
+            // ------------------------------------------
+            // AVISAR
+            // ------------------------------------------
+
+            world.events.dispatch(
+              world.events.globalId,
+              MODEL_PLACED_EVENT,
+              {
+                animal:
+                  current.pendingAnimal,
+
+                position: {
+                  x: hitPoint.x,
+                  y: hitPoint.y,
+                  z: hitPoint.z,
+                },
+              }
+            )
+
+            console.log(
+              '[surface]  MODELO COLOCADO:',
               current.pendingAnimal
             )
 
-          if (!modelEid) {
+            // ------------------------------------------
+            // QUITAR LISTENER
+            // ------------------------------------------
 
-            console.warn(
-              '[surface] ⚠️ No existe modelo para:',
-              current.pendingAnimal
+            canvas.removeEventListener(
+              'touchstart',
+              handleTouch
             )
-
-            return
           }
 
-          // --------------------------------------------
-          // COLOCAR EXACTAMENTE DONDE TOCÓ
-          // --------------------------------------------
+        // ----------------------------------------------
+        // ESCUCHAR TOUCH
+        // ----------------------------------------------
 
-          world.setPosition(
-            modelEid,
-            tapPosition.x,
-            tapPosition.y,
-            tapPosition.z
-          )
+        canvas.addEventListener(
+          'touchstart',
+          handleTouch,
+          {
+            passive: true,
+            capture: true,
+          }
+        )
 
-          // --------------------------------------------
-          // MOSTRAR MODELO
-          // --------------------------------------------
-
-          ecs.Hidden.remove(
-            world,
-            modelEid
-          )
-
-          // --------------------------------------------
-          // GUARDAR MODELO
-          // --------------------------------------------
-
-          dataAttribute.cursor(eid).placedModel =
-            modelEid
-
-          // --------------------------------------------
-          // YA NO ESTÁ ESPERANDO COLOCACIÓN
-          // --------------------------------------------
-
-          dataAttribute.cursor(eid).floorReady =
-            true
-
-          // --------------------------------------------
-          // AVISAR AL DETECTOR
-          // --------------------------------------------
-
-          world.events.dispatch(
-            world.events.globalId,
-            MODEL_PLACED_EVENT,
-            {
-              animal: current.pendingAnimal,
-              position: tapPosition,
-            }
-          )
-
-          console.log(
-            '[surface] ✓ MODELO COLOCADO:',
-            current.pendingAnimal
-          )
-        }
-      )
+        console.log(
+          '[surface] Touch listener ACTIVADO'
+        )
+      })
   },
 })
