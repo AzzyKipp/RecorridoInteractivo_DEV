@@ -661,189 +661,6 @@
       },
       "order": 30.6147108700169
     },
-    "e84f056b-7bef-4bb6-bad8-a6ce63db8edc": {
-      "id": "e84f056b-7bef-4bb6-bad8-a6ce63db8edc",
-      "position": [
-        -0.04237648163710628,
-        0.09125314195250356,
-        0.17665604269012666
-      ],
-      "rotation": [
-        0,
-        0,
-        0,
-        1
-      ],
-      "scale": [
-        1,
-        0.5,
-        0.5
-      ],
-      "geometry": {
-        "type": "plane",
-        "width": 1,
-        "height": 1
-      },
-      "material": {
-        "type": "basic",
-        "color": "#FFFFFF",
-        "textureSrc": {
-          "type": "asset",
-          "asset": "assets/VideoIntroductorioVR_.mp4"
-        }
-      },
-      "parentId": "34027fe7-11cc-47de-8080-18dd8a4b96b4",
-      "components": {},
-      "name": "Plano",
-      "order": 33.09240424989505,
-      "videoControls": {
-        "paused": true,
-        "loop": false
-      }
-    },
-    "26c37545-5b99-4e6d-835a-4e255b54180e": {
-      "id": "26c37545-5b99-4e6d-835a-4e255b54180e",
-      "position": [
-        -0.04237648163710628,
-        0.09125314195250356,
-        0.2343736020218695
-      ],
-      "rotation": [
-        0,
-        0,
-        0,
-        1
-      ],
-      "scale": [
-        1,
-        0.5,
-        0.5
-      ],
-      "geometry": null,
-      "material": null,
-      "parentId": "34027fe7-11cc-47de-8080-18dd8a4b96b4",
-      "components": {
-        "aef797fb-74e1-42e6-8807-eab2db70ff6e": {
-          "id": "aef797fb-74e1-42e6-8807-eab2db70ff6e",
-          "name": "Pause Video",
-          "parameters": {
-            "videoEntity": {
-              "type": "entity",
-              "id": "e84f056b-7bef-4bb6-bad8-a6ce63db8edc"
-            },
-            "pauseIcon": {
-              "type": "entity",
-              "id": "f907d0e5-0c7e-45bf-af4d-43cb9c98632f"
-            },
-            "playIcon": {
-              "type": "entity",
-              "id": "27d1a1da-f0a6-44a0-9dc7-7533e4c2bb03"
-            }
-          }
-        }
-      },
-      "ui": {
-        "type": "3d",
-        "width": 100,
-        "height": 100,
-        "background": "#000000",
-        "borderRadius": 18,
-        "flexDirection": "row",
-        "backgroundOpacity": 0,
-        "padding": "10",
-        "gap": "6",
-        "alignItems": "center",
-        "justifyContent": "center",
-        "image": null,
-        "backgroundSize": "contain",
-        "ignoreRaycast": false,
-        "stackingOrder": 10
-      },
-      "name": "Botón",
-      "order": 35.06304236407454
-    },
-    "f907d0e5-0c7e-45bf-af4d-43cb9c98632f": {
-      "id": "f907d0e5-0c7e-45bf-af4d-43cb9c98632f",
-      "position": [
-        -0.323,
-        0,
-        0
-      ],
-      "rotation": [
-        0,
-        0,
-        0,
-        1
-      ],
-      "scale": [
-        1,
-        1,
-        1
-      ],
-      "geometry": null,
-      "material": null,
-      "parentId": "26c37545-5b99-4e6d-835a-4e255b54180e",
-      "components": {},
-      "name": "IconoPausa",
-      "ui": {
-        "width": 16,
-        "height": 16,
-        "image": {
-          "type": "asset",
-          "asset": "assets/PauseIcon.png"
-        },
-        "backgroundOpacity": 1,
-        "backgroundSize": "contain",
-        "position": "absolute",
-        "top": "",
-        "left": "",
-        "bottom": "",
-        "right": "",
-        "ignoreRaycast": true
-      },
-      "order": 0.4921792227060399
-    },
-    "27d1a1da-f0a6-44a0-9dc7-7533e4c2bb03": {
-      "id": "27d1a1da-f0a6-44a0-9dc7-7533e4c2bb03",
-      "position": [
-        -0.323,
-        0,
-        0
-      ],
-      "rotation": [
-        0,
-        0,
-        0,
-        1
-      ],
-      "scale": [
-        1,
-        1,
-        1
-      ],
-      "geometry": null,
-      "material": null,
-      "parentId": "26c37545-5b99-4e6d-835a-4e255b54180e",
-      "components": {},
-      "name": "IconoPlay",
-      "ui": {
-        "width": 16,
-        "height": 16,
-        "image": {
-          "type": "asset",
-          "asset": "assets/PlayIcon.png"
-        },
-        "backgroundOpacity": 1,
-        "backgroundSize": "contain",
-        "position": "absolute",
-        "top": "",
-        "left": "",
-        "bottom": "",
-        "right": "",
-        "ignoreRaycast": true
-      },
-      "order": 2.1676613363547648
-    },
     "c80c4928-54b4-4fbb-9f2b-3a7fbd8a48ab": {
       "id": "c80c4928-54b4-4fbb-9f2b-3a7fbd8a48ab",
       "position": [
@@ -960,6 +777,90 @@
       "name": "Marco",
       "order": 29.80207223311248,
       "hidden": false
+    },
+    "e8c7ebbd-b2ae-4980-9cae-afe174bf9783": {
+      "id": "e8c7ebbd-b2ae-4980-9cae-afe174bf9783",
+      "position": [
+        -0.0265561721185808,
+        0.008243903898953686,
+        0.01180100777882753
+      ],
+      "rotation": [
+        0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "scale": [
+        0.15,
+        0.15,
+        0.15
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "34027fe7-11cc-47de-8080-18dd8a4b96b4",
+      "components": {
+        "bed88521-b9ff-4f04-ad90-a5a81df6c1d4": {
+          "id": "bed88521-b9ff-4f04-ad90-a5a81df6c1d4",
+          "name": "AbrirVideo",
+          "parameters": {
+            "url": "https://drive.google.com/drive/folders/10R8GKzZvT7lMtY23SBd8rJUw-YuNIsG-?usp=sharing"
+          }
+        }
+      },
+      "gltfModel": {
+        "src": {
+          "type": "asset",
+          "asset": "assets/GLBS/BotonModelo.glb"
+        },
+        "animationClip": "",
+        "loop": true
+      },
+      "name": "BotonModelo.glb",
+      "order": 27.47576673964333,
+      "collider": {
+        "geometry": {
+          "type": "box",
+          "depth": 2,
+          "height": 2,
+          "width": 2
+        },
+        "offsetX": 0,
+        "offsetY": 0.1
+      }
+    },
+    "b5fc028c-dd7a-4e64-88ac-f30544afe578": {
+      "id": "b5fc028c-dd7a-4e64-88ac-f30544afe578",
+      "position": [
+        0,
+        0.4588819732586855,
+        0.3474453013958081
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "34027fe7-11cc-47de-8080-18dd8a4b96b4",
+      "components": {},
+      "ui": {
+        "width": 70,
+        "height": 10,
+        "text": "Toca el boton para ver el video",
+        "color": "#ffffff",
+        "fontSize": 12,
+        "type": "3d"
+      },
+      "name": "TextoBoton",
+      "order": 29.804131714218038
     }
   },
   "spaces": {
