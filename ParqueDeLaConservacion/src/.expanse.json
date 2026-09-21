@@ -631,7 +631,8 @@
       },
       "name": "TextoDebug",
       "order": 29.51662732056228,
-      "hidden": false
+      "hidden": false,
+      "disabled": true
     },
     "34027fe7-11cc-47de-8080-18dd8a4b96b4": {
       "id": "34027fe7-11cc-47de-8080-18dd8a4b96b4",
@@ -697,50 +698,7 @@
       "id": "9a23baec-6128-4586-bef0-d595fc51f59f",
       "position": [
         -2.220446049250313e-16,
-        1.2902125448033783,
-        -2.220446049250313e-16
-      ],
-      "rotation": [
-        0,
-        0,
-        0,
-        1
-      ],
-      "scale": [
-        1,
-        1,
-        1
-      ],
-      "geometry": null,
-      "material": null,
-      "parentId": "5ebf389a-37c6-4712-bb37-be093c903d48",
-      "components": {},
-      "ui": {
-        "width": 174,
-        "height": 80,
-        "text": "Alejate un poco del infograma y apunta la camara hacia el piso para descubrir al animal en su habitat libre",
-        "color": "#ffffff",
-        "fontSize": 15,
-        "type": "overlay",
-        "font": {
-          "type": "font",
-          "font": "Futura"
-        },
-        "position": "absolute",
-        "top": 8,
-        "left": 6,
-        "bottom": "",
-        "right": ""
-      },
-      "name": "TextoSuperficie",
-      "order": 32.219745780208626,
-      "hidden": false
-    },
-    "5ebf389a-37c6-4712-bb37-be093c903d48": {
-      "id": "5ebf389a-37c6-4712-bb37-be093c903d48",
-      "position": [
-        0,
-        -1.095863175756843,
+        0.19434936904653521,
         0
       ],
       "rotation": [
@@ -759,23 +717,24 @@
       "parentId": "c80c4928-54b4-4fbb-9f2b-3a7fbd8a48ab",
       "components": {},
       "ui": {
-        "width": 187,
-        "height": 100,
-        "type": "3d",
-        "background": "#066a12",
-        "backgroundOpacity": 1,
+        "width": 174,
+        "height": 80,
+        "text": "Alejate un poco del infograma y apunta la camara hacia el piso para descubrir al animal",
+        "color": "#ffffff",
+        "fontSize": 15,
+        "type": "overlay",
+        "font": {
+          "type": "font",
+          "font": "Futura"
+        },
         "position": "absolute",
-        "top": 555,
-        "left": 104,
+        "top": 425,
+        "left": 112,
         "bottom": "",
-        "right": "",
-        "ignoreRaycast": true,
-        "image": null,
-        "backgroundSize": "contain",
-        "borderRadius": 8
+        "right": ""
       },
-      "name": "Marco",
-      "order": 29.80207223311248,
+      "name": "TextoSuperficie",
+      "order": 31.103116832357312,
       "hidden": false
     },
     "e8c7ebbd-b2ae-4980-9cae-afe174bf9783": {
@@ -823,7 +782,7 @@
           "type": "box",
           "depth": 2,
           "height": 2,
-          "width": 2
+          "width": 3
         },
         "offsetX": 0,
         "offsetY": 0.1
