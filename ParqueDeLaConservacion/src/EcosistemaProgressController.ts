@@ -24,9 +24,18 @@ const EcosistemaProgressController = ecs.registerComponent({
             return
           }
 
-          const model = world.three.entityToObject.get(ocelote)
+          const model = event.data.model
 
           if (!model) {
+            return
+          }
+
+          // Comprobar que el modelo cargado
+          // corresponde a Porcion_Ocelote
+          const oceloteObject =
+            world.three.entityToObject.get(ocelote)
+
+          if (model !== oceloteObject) {
             return
           }
 
@@ -39,8 +48,11 @@ const EcosistemaProgressController = ecs.registerComponent({
                 : [child.material]
 
               materials.forEach((material: any) => {
+
                 material.transparent = true
                 material.opacity = 0.25
+                material.needsUpdate = true
+
               })
             }
           })
@@ -50,3 +62,4 @@ const EcosistemaProgressController = ecs.registerComponent({
 })
 
 export {EcosistemaProgressController}
+
