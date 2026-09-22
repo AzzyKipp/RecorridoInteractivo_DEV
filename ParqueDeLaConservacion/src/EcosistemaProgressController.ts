@@ -13,10 +13,28 @@ const EcosistemaProgressController = ecs.registerComponent({
     ecs.defineState('default')
       .initial()
 
+      .onEnter(() => {
+
+        const {ocelote} = schemaAttribute.get(eid)
+
+        if (!ocelote) {
+          return
+        }
+
+        // Ocultar Ocelote al comenzar
+        ecs.Disabled.set(world, ocelote)
+      })
+
       .listen(
         world.events.globalId,
-        ecs.events.GLTF_MODEL_LOADED,
+        ecs.events.REALITY_IMAGE_FOUND,
         (event: any) => {
+
+          const targetName = event.data.name
+
+          if (targetName !== 'Ecosistema') {
+            return
+          }
 
           const {ocelote} = schemaAttribute.get(eid)
 
@@ -24,42 +42,11 @@ const EcosistemaProgressController = ecs.registerComponent({
             return
           }
 
-          const model = event.data.model
-
-          if (!model) {
-            return
-          }
-
-          // Comprobar que el modelo cargado
-          // corresponde a Porcion_Ocelote
-          const oceloteObject =
-            world.three.entityToObject.get(ocelote)
-
-          if (model !== oceloteObject) {
-            return
-          }
-
-          model.traverse((child: any) => {
-
-            if (child.isMesh && child.material) {
-
-              const materials = Array.isArray(child.material)
-                ? child.material
-                : [child.material]
-
-              materials.forEach((material: any) => {
-
-                material.transparent = true
-                material.opacity = 0.25
-                material.needsUpdate = true
-
-              })
-            }
-          })
+          // Mostrar Ocelote al escanear Ecosistema
+          ecs.Disabled.remove(world, ocelote)
         }
       )
   },
 })
 
 export {EcosistemaProgressController}
-
