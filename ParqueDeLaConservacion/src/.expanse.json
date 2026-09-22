@@ -134,7 +134,27 @@
           },
           "2c8d20a2-d48c-4ac8-a947-c2d8a6d9528e": {
             "id": "2c8d20a2-d48c-4ac8-a947-c2d8a6d9528e",
-            "deletions": {}
+            "deletions": {},
+            "ui": {
+              "flexDirection": "row",
+              "width": 319,
+              "height": 259,
+              "type": "overlay",
+              "background": "#ffffff",
+              "backgroundOpacity": 1,
+              "image": {
+                "type": "asset",
+                "asset": "assets/Box.png"
+              },
+              "backgroundSize": "contain",
+              "alignItems": "center",
+              "justifyContent": "center",
+              "position": "absolute",
+              "top": 216,
+              "left": 31,
+              "bottom": 20058,
+              "right": ""
+            }
           }
         }
       },
@@ -310,7 +330,7 @@
         "top": 18,
         "left": "",
         "bottom": "",
-        "right": 41
+        "right": 30
       },
       "name": "CloseButton",
       "order": 5.147825894781773
@@ -1546,57 +1566,57 @@
     "d2c80a95-cd4e-43d2-905b-809d70fbb7ce": {
       "id": "d2c80a95-cd4e-43d2-905b-809d70fbb7ce",
       "position": [
-        -22.13893786008363,
-        0,
-        12.972579742537315
+        0.49489741893112404,
+        -1.6885532229666316,
+        3.74934133288514e-16
       ],
       "rotation": [
+        0.7071067811865475,
         0,
         0,
-        0,
-        1
+        0.7071067811865476
       ],
       "scale": [
-        0.2,
-        0.2,
-        0.2
+        0.052631578947368376,
+        0.052631578947368376,
+        0.052631578947368376
       ],
       "geometry": null,
       "material": null,
-      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "parentId": "68fe93b2-ad41-4fb5-93eb-ed1af54ef3b9",
       "components": {},
       "gltfModel": {
         "src": {
           "type": "asset",
           "asset": "assets/GuacamayaEnEcosistema.glb"
         },
-        "animationClip": "ParrotALL_CircleFly",
+        "animationClip": "ParrotALL_Hover",
         "loop": true
       },
-      "name": "GuacamayaEnEcosistema.glb",
+      "name": "Porcion_Guacamaya.glb",
       "order": 1.567141148720455
     },
     "731a341d-1c99-47ec-80f7-7d5882459be3": {
       "id": "731a341d-1c99-47ec-80f7-7d5882459be3",
       "position": [
-        -21.8505332396916,
-        0,
-        16.78144081378454
+        1.104770658279166,
+        -1.6000849005774271,
+        3.552902195952228e-16
       ],
       "rotation": [
+        0.7071067811865475,
         0,
         0,
-        0,
-        1
+        0.7071067811865476
       ],
       "scale": [
-        0.3,
-        0.3,
-        0.3
+        0.052631578947368376,
+        0.05263157894736837,
+        0.05263157894736837
       ],
       "geometry": null,
       "material": null,
-      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "parentId": "68fe93b2-ad41-4fb5-93eb-ed1af54ef3b9",
       "components": {},
       "gltfModel": {
         "src": {
@@ -1606,30 +1626,30 @@
         "animationClip": "B1Idle",
         "loop": true
       },
-      "name": "MonoEnEcosistema.glb",
+      "name": "Porcion_Mono.glb",
       "order": 1.4363214809511682
     },
     "f0f21955-7302-46df-a2a6-18bec5824c65": {
       "id": "f0f21955-7302-46df-a2a6-18bec5824c65",
       "position": [
-        -20.757395227539007,
-        0,
-        21.040455436059588
+        0.5490410787971224,
+        -2.0487717422302065,
+        4.549187120850743e-16
       ],
       "rotation": [
-        0,
-        0,
-        0,
-        1
+        3.14018491736755e-16,
+        0.7071067811865476,
+        0.7071067811865475,
+        3.1401849173675503e-16
       ],
       "scale": [
-        0.3,
-        0.3,
-        0.3
+        0.052631578947368376,
+        0.052631578947368376,
+        0.052631578947368376
       ],
       "geometry": null,
       "material": null,
-      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "parentId": "68fe93b2-ad41-4fb5-93eb-ed1af54ef3b9",
       "components": {},
       "gltfModel": {
         "src": {
@@ -1639,30 +1659,30 @@
         "animationClip": "idle",
         "loop": true
       },
-      "name": "OsoEnEcosistema.glb",
+      "name": "Porcion_Oso.glb",
       "order": 1.1721880844323271
     },
     "100f59e5-fc16-4407-9e5c-52a03e35a612": {
       "id": "100f59e5-fc16-4407-9e5c-52a03e35a612",
       "position": [
-        -20.17367402704238,
-        0,
-        25.22777483259499
+        1.2018200870612823,
+        -2.1045056065643473,
+        4.672941159720939e-16
       ],
       "rotation": [
+        0.7071067811865475,
         0,
         0,
-        0,
-        1
+        0.7071067811865476
       ],
       "scale": [
-        0.3,
-        0.3,
-        0.3
+        0.052631578947368376,
+        0.052631578947368376,
+        0.052631578947368376
       ],
       "geometry": null,
       "material": null,
-      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "parentId": "68fe93b2-ad41-4fb5-93eb-ed1af54ef3b9",
       "components": {},
       "gltfModel": {
         "src": {
@@ -1672,7 +1692,7 @@
         "animationClip": "Take 001",
         "loop": true
       },
-      "name": "OceloteEnEcosistema.glb",
+      "name": "Porcion_Ocelote.glb",
       "order": 1.5678766888742819
     },
     "2403307b-7ebb-4742-b3eb-dc7362ffc368": {
@@ -1896,8 +1916,75 @@
       "name": "AnimalAudioManager",
       "order": 1.6135541683715708
     },
-    "e8329a61-15ee-4da5-8e24-af2429a71b51": {
-      "id": "e8329a61-15ee-4da5-8e24-af2429a71b51",
+    "1b4aac87-86fe-42c8-88e6-e2748feb9f94": {
+      "id": "1b4aac87-86fe-42c8-88e6-e2748feb9f94",
+      "position": [
+        -4.738229167249702,
+        0,
+        0.3100238537760731
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        0.01,
+        0.01,
+        0.01
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {},
+      "gltfModel": {
+        "src": {
+          "type": "asset",
+          "asset": "assets/bird_cage.glb"
+        },
+        "animationClip": "",
+        "loop": true
+      },
+      "name": "bird_cage.glb",
+      "order": 1.970858313443768,
+      "hidden": true
+    },
+    "a23d100a-657d-43c5-9731-a3e30a937142": {
+      "id": "a23d100a-657d-43c5-9731-a3e30a937142",
+      "position": [
+        -1.2693636932109484,
+        4.314092150881299,
+        -1.6732612503482578
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        200,
+        200,
+        200
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "1b4aac87-86fe-42c8-88e6-e2748feb9f94",
+      "components": {},
+      "gltfModel": {
+        "src": {
+          "type": "asset",
+          "asset": "assets/Guacamaya.glb"
+        },
+        "animationClip": "ParrotALL_Preen",
+        "loop": true
+      },
+      "name": "CagedBird.glb",
+      "order": 1.5022071959571937
+    },
+    "68fe93b2-ad41-4fb5-93eb-ed1af54ef3b9": {
+      "id": "68fe93b2-ad41-4fb5-93eb-ed1af54ef3b9",
       "position": [
         0,
         0,
@@ -1916,19 +2003,10 @@
       ],
       "geometry": null,
       "material": null,
-      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "parentId": "d35cff39-edd6-4547-90f2-a15ee4c1a085",
       "components": {},
-      "ui": {
-        "width": 70,
-        "height": 10,
-        "text": "Sample Text",
-        "color": "#ffffff",
-        "fontSize": 12,
-        "type": "3d"
-      },
-      "name": "TextoDebug",
-      "order": 1.1974135958991776,
-      "disabled": true
+      "name": "EcosistemaProgreso",
+      "order": 25.731324235043413
     }
   },
   "spaces": {

@@ -18,6 +18,9 @@ const EcosistemaUnlockController = ecs.registerComponent({
 
     const discoveredTargets = new Set<string>()
 
+    // 🔒 Estado independiente del Image Target
+    let ecosistemaDesbloqueado = false
+
     const feedbackSound = './assets/twinkle.mp3'
     const ecosistemaSound = './assets/pitched_twink.mp3'
 
@@ -25,12 +28,12 @@ const EcosistemaUnlockController = ecs.registerComponent({
       .initial()
 
       .onEnter(() => {
-        const ecosistemaEid =
-          schemaAttribute.get(eid).ecosistema
 
-        if (ecosistemaEid) {
-          ecs.Disabled.set(world, ecosistemaEid)
-        }
+        // ⚠️ Ya NO deshabilitamos Ecosistema.
+        // El Image Target debe permanecer activo
+        // para poder detectar Target 5.
+
+        ecosistemaDesbloqueado = false
       })
 
       .listen(
@@ -40,16 +43,11 @@ const EcosistemaUnlockController = ecs.registerComponent({
 
           const targetName = event.data.name
 
-          // 🌿 Ecosistema
-          // Solo suena si ya fue desbloqueado
+          // 🌿 Ecosistema / Target 5
           if (targetName === 'Ecosistema') {
-            const ecosistemaEid =
-              schemaAttribute.get(eid).ecosistema
 
-            if (
-              ecosistemaEid &&
-              !ecs.Disabled.has(world, ecosistemaEid)
-            ) {
+            // 🔊 Solo suena si las 4 láminas ya fueron encontradas
+            if (ecosistemaDesbloqueado) {
               playEcosistemaSound()
             }
 
@@ -61,24 +59,20 @@ const EcosistemaUnlockController = ecs.registerComponent({
             return
           }
 
+          // Evitar repetir una lámina
           if (discoveredTargets.has(targetName)) {
             return
           }
 
           discoveredTargets.add(targetName)
 
-          // 🔊 Sonido del animal
+          // 🔊 Sonido de la lámina
           playFeedbackSound()
 
-          // 🌿 Desbloquear al encontrar los 4
+          // 🌿 Desbloquear al encontrar las 4
           if (discoveredTargets.size === 4) {
 
-            const ecosistemaEid =
-              schemaAttribute.get(eid).ecosistema
-
-            if (ecosistemaEid) {
-              ecs.Disabled.remove(world, ecosistemaEid)
-            }
+            ecosistemaDesbloqueado = true
           }
         }
       )
