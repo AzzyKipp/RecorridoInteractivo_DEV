@@ -1,4 +1,3 @@
-
 import * as ecs from '@8thwall/ecs'
 
 const EcosistemaProgressController = ecs.registerComponent({
@@ -6,45 +5,45 @@ const EcosistemaProgressController = ecs.registerComponent({
 
   schema: {
     progreso: ecs.eid,
+    ocelote: ecs.eid,
   },
 
   stateMachine: ({world, eid, schemaAttribute}) => {
-
-    const requiredTargets = new Set([
-      'O_Lamina',
-      'OA_Lamina',
-      'MA_Lamina',
-      'G_Lamina',
-    ])
-
-    const discoveredTargets = new Set<string>()
 
     ecs.defineState('default')
       .initial()
 
       .listen(
         world.events.globalId,
-        ecs.events.REALITY_IMAGE_FOUND,
+        ecs.events.GLTF_MODEL_LOADED,
         (event: any) => {
 
-          const targetName = event.data.name
+          const {ocelote} = schemaAttribute.get(eid)
 
-          // Ignorar cualquier target que no sea una de las 4 láminas
-          if (!requiredTargets.has(targetName)) {
+          if (!ocelote) {
             return
           }
 
-          // Evitar repetir una lámina
-          if (discoveredTargets.has(targetName)) {
+          const model = world.three.entityToObject.get(ocelote)
+
+          if (!model) {
             return
           }
 
-          discoveredTargets.add(targetName)
+          model.traverse((child: any) => {
 
-          // Por ahora solo mostramos en el debug visual
-          console.log(
-            `Ecosistema Progress: ${targetName} encontrado`
-          )
+            if (child.isMesh && child.material) {
+
+              const materials = Array.isArray(child.material)
+                ? child.material
+                : [child.material]
+
+              materials.forEach((material: any) => {
+                material.transparent = true
+                material.opacity = 0.25
+              })
+            }
+          })
         }
       )
   },
